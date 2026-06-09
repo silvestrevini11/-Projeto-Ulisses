@@ -1,0 +1,447 @@
+h1{
+    color: #000000;
+    font-size: 3rem;
+    text-shadow: 0 0 px #ffffff;
+}
+
+.fotoC{
+    width: 400px;
+    height: 500px;
+    transition: all 0.5s;
+    z-index: 3;
+    box-shadow: 0 0 10px black;
+}
+.Games{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 130px;
+    padding-top: 80px;
+}
+.capa{
+   display: inline-block;
+}
+/* NOME DOS JOGOS */
+.legenda{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    
+    text-shadow: 0 0 10px rgb(140, 51, 148);
+}
+/* PREÇO DOS JOGOS */
+.preço{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    text-shadow: 0 0 10px rgb(3, 156, 245);
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    
+    /* Controla a velocidade e suavidade do efeito */
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+.preço:hover {
+    color: rgb(255, 182, 193); /* Muda para rosa claro */
+    transform: scale(1.50);    
+    text-shadow: 0 0 20px rgb(4, 104, 235), 0 0 35px rgb(253, 0, 169); 
+    cursor: pointer;
+}
+    
+.titulo{
+    padding-left: 25px;
+    padding-bottom: auto;
+    padding-top: auto;
+    color: rgb(32, 0, 193);
+}
+.subtitulo{
+    color: rgb(255, 255, 255);
+    padding-left: 20px;
+}
+
+.fotoC:hover{
+    filter: brightness(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 0, 255, 0.663);
+    cursor: pointer;
+}
+.fotoC:active{
+    filter: brightness(0.4);
+    transform: scale(0.9);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
+    cursor: pointer;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+
+    background: rgba(0, 0, 0, 0.5); /* fundo semi-transparente really :(*/
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(50px);
+
+    z-index: 1000;
+}
+
+body{
+    background: linear-gradient(
+        135deg,
+        #100f2a,
+        #1e293b,
+        #312e81
+    );
+
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    padding-top: 18px;
+    padding-left: 10px;
+
+}
+
+.btn{
+    height: 60px;
+    width: 150px;
+    margin: 2px;
+    border: rgb(81, 81, 81);
+    background-color: rgb(211, 211, 211);
+    border-style: double;
+    font-size: 22px;
+    transition: all 0.1s;
+    z-index: 3;
+}
+
+.btn:hover{
+    filter: brightness(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
+    cursor: pointer;
+}
+.btn:active{
+    filter: brightness(0.8);
+    transform: scale(0.8);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
+    cursor: pointer;
+}
+
+
+/* DE CIMA É O INDEX */
+
+/* Login */
+
+.Sec-Login-tabela{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    border-width: 5px;
+    background-color: black;
+    width: 455px;
+    height: 500px;
+    padding: 10px;
+    border-style: groove;
+    background-color: rgb(207, 207, 207);   
+}
+
+.btn-login {
+  margin: auto;
+  font-size: 18px;
+  background-color: #FF5C00;
+  color: #ffffff;
+  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 900;
+  min-width: 400px;
+  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.btn-login:before {
+  position: absolute;
+  pointer-events: none;
+  top: 0; left: 0;
+  display: block;
+  width: 100%; height: 100%;
+  content: "";
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  z-index: -1;
+  background-color: #FF5C00 !important;
+  box-shadow: 0 -4px #6a040F inset,
+    inset,
+    -4px 0 rgb(100 253 31 / 50%) inset,
+    4px 0 rgb(21 108 0 / 50%) inset;
+}
+.btn-login:after {
+  position: absolute;
+  pointer-events: none;
+  top: 0; left: 0;
+  display: block;
+  width: 100%; height: 100%;
+  content: "";
+  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+.btn-login:hover:before {
+  box-shadow: 0 -4px rgb(0 0 0 / 50%) inset,
+    0 4px rgb(255 255 255 / 20%) inset,
+    -4px 0 rgb(255 255 255 / 20%) inset,
+    4px 0 rgb(0 0 0 / 50%) inset;
+}
+.btn-login:hover:after { box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%); }
+.btn-login:active { transform: translateY(4px); }
+.btn-login:active:after { box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%); }
+
+.form-log-login{
+ margin-top: 5px;   
+}
+.form-log-senha{
+     margin-top: 5px; 
+     margin-bottom: 50px;
+}
+.login_titulo{
+    color: black;
+    display: flex;
+    flex: auto;
+    margin-left: 180px;
+}
+
+/* Cadastro */
+
+.Cadastro_titulo{
+    color: black;
+    display: flex;
+    flex: auto;
+    margin-left: 120px;
+}
+
+.butões-reg{
+margin-left: auto;
+margin-right: 15px;
+margin-top: auto;
+margin-bottom: auto;
+}
+
+.Sec-Cadastro-tabela{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    border-width: 5px;
+    background-color: black;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    border-style: groove;
+    background-color: rgb(207, 207, 207);
+}
+
+.label-cad{
+    color: black;
+}
+.cad-ult-button{
+ font-size: 18px;
+  background-color: #008542;
+  color: #ffffff;
+  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 0;
+  z-index: 1;
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 4.5px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 900;
+  min-width: 400px;
+  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.form-cad-login{
+ margin-top: 5px;   
+}
+.form-cad-senha{
+     margin-top: 5px; 
+}
+.form-cad-nome{
+    margin-top: 5px;  
+} 
+.form-cad-email{
+     margin-top: 5px; 
+     margin-bottom: 50px;
+}
+
+input{
+    width: 350px;
+    height: 20px;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.input-wrapper{
+  display: flex;
+  flex: auto;
+  border: none;
+  padding: 1rem;
+  font-size: 2.80rem;
+  width: 10rem;
+  color: rgb(148, 143, 143);
+  box-shadow: 0 0.2rem #0f0f0f;
+  right: 90rem;
+  padding-left: 15%;
+  padding-top: 38px;
+  left: 10rem;
+  height: auto;
+}
+
+
+
+/*COISAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA DA I.A
+
+/* Container Principal do Card */
+/*
+.capa-steam {
+    background-color: #0b2654;
+    border-radius: 12px;
+    width: 240px;
+    display: inline-block;
+    overflow: hidden; 
+    font-family: sans-serif;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    vertical-align: top;
+}
+
+/* Barra Superior (Plataforma) */
+/*
+.plataforma {
+    background-color: #103d7c;
+    color: #ffffff;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Ajuste da Imagem 
+.fotoC {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Espaçamento interno dos textos 
+.conteudo-card {
+    padding: 15px;
+}
+
+/* Nome do Jogo 
+.legenda {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    text-align: left;
+}
+
+/* Etiqueta Windows 
+.tag-sistema {
+    background-color: #071735;
+    color: #8da1bb;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* Bloco do Cronômetro 
+.cronometro {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffffff;
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+}
+
+/* Alinhamento do Desconto + Preço 
+.container-preço {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Quadrado Vermelho de Desconto 
+.tag-desconto {
+    background-color: #ff1e4e; 
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+/* Estilo do Preço Adaptado 
+.preço {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Mantendo a sua animação exclusiva de zoom no preço ao passar o mouse 
+.capa-steam:hover .preço {
+    transform: scale(1.1);
+    color: #ff1e4e; 
+}
+/*COISA DA I.A
+        <div class="capa-steam">
+    <!-- Barra Superior da Plataforma -->
+    <div class="plataforma steam">
+        <span>Steam</span>
+    </div>
+
+    <!-- Link e Imagem do Jogo -->
+    <a href="JogoTela.php?id=1" class="link-jogo">
+        <img class="fotoC" src="IMG/FarCry4.png" alt="Far Cry 4">
+    </a>
+
+    <!-- Conteúdo de Texto e Informações -->
+    <div class="conteudo-card">
+        <p class="legenda">Far Cry 4</p>
+        <span class="tag-sistema">(Windows)</span>
+
+        <!-- Área de Preço com Desconto -->
+        <div class="container-preço">
+            <div class="tag-desconto">-71%</div>
+            <p class="preço">R$ 49,99</p>
+        </div>
+    </div>
+</div>

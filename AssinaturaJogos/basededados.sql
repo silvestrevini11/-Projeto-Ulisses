@@ -6,10 +6,7 @@ CREATE TABLE IF NOT EXISTS usuario(
     nome_user varchar(50) not null,
     login_user varchar(50) not null,
     senha_user varchar(50) not null,
-    data_nasc_user date not null,
-    cpf_user varchar(50) not null,
     email_user varchar(50) not null,
-    tel_user varchar(20),
     primary key(id_user)
 );  
 CREATE TABLE IF NOT EXISTS jogos (
@@ -46,24 +43,10 @@ CREATE TABLE IF NOT EXISTS plataformas (
     id_plataforma INT AUTO_INCREMENT PRIMARY KEY,
     nome_plataforma VARCHAR(50) NOT NULL
 );
-
+INSERT INTO jogos (preco_jogo, nome_jogo, criador_jogo, descricao_jogo, data_lancamento, genero, plataforma, id_genero, id_plataforma)
+VALUES (59.90, 'FarCry4', 'Ubisoft', 'Aventura em mundo aberto no Himalaia.', '2014-11-18', 'Ação', 'PC', 1, 1);
 select * from usuario;
 select * from jogos;
 select * from itens_do_pedido;
 select * from generos;
 select * from plataformas;
-
-insert into usuario (nome_user, login_user, senha_user, data_nasc_user, cpf_user, email_user, tel_user)values
-('neymar','neymazinho',11,'1984-02-02','Cristiano Ronaldo','neymar@gmail.com',11213232123);
-
-insert into generos (nome_genero) values
-("ação");
-
-insert into jogos values
-(1,20.45,'Grand Theft Auto: San Andreas','rockstar',' é um clássico jogo de ação em mundo aberto ambientado no início dos anos 90','2004-10-26','ação','playstation',1,1);
-
-insert into plataformas (nome_plataforma) values
-('Playstation');
-
-insert into itens_do_pedido (pedido_id, id_jogo, id_plataforma, preco_na_venda, chave_de_ativacao) values
-(1,1,1,10.00,'pauzinho');

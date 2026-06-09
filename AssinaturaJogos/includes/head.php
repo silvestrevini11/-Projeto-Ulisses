@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>Site-Jogos</title>
 </head>
 <body>
-    
