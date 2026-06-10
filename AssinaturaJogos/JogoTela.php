@@ -27,14 +27,31 @@ if (!$jogo) {
 <?php
 $nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
 ?>
-
-<section class="jogo-container">
-
-    <div class="jogo-capa">
-        <img src="IMG/<?php echo htmlspecialchars($jogo->nome_jogo); ?>.png"
+  <header class="header-telajogo">
+        <div">
+        <img src="IMG/Banner_<?php echo htmlspecialchars($jogo->nome_jogo); ?>.png"
              alt="<?php echo htmlspecialchars($jogo->nome_jogo); ?>"
              class="jogo-img">
     </div>
+  </header>
+
+<section class="jogo-container">
+
+<section class="top-bottom">
+
+<div class="container-video">
+  <iframe class="videojogo"
+  width='560'
+  height='315'
+  src="https://www.youtube.com/embed/<?= $jogo->video_jogo?>"
+  frameborder='0'
+  allowfullscreen>
+  </iframe>
+
+<p class="jogo-descricao"><?php echo htmlspecialchars($jogo->descricao_jogo); ?></p>
+
+</section>
+<aside class="sidebar">
 
     <div class="jogo-info">
 
@@ -49,7 +66,6 @@ $nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
 
         <p class="jogo-data">Lançamento: <?php echo date('d/m/Y', strtotime($jogo->data_lancamento)); ?></p>
 
-        <p class="jogo-descricao"><?php echo htmlspecialchars($jogo->descricao_jogo); ?></p>
 
         <div class="jogo-compra">
             <span class="jogo-preco">R$ <?php echo number_format($jogo->preco_jogo, 2, ',', '.'); ?></span>
@@ -57,6 +73,8 @@ $nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
         </div>
 
     </div>
+
+    
 
 </section>
 

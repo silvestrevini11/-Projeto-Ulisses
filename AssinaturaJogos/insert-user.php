@@ -1,10 +1,10 @@
 <?php
 include __DIR__.'/includes/head.php';
+
 if(!isset($_SERVER['REQUEST_METHOD'])==="POST"){
     header('Location:form-usuario.php');
     die();
 }
-// caso deseje verificar se cada campo foi preenchido
 // if(empty($_POST['name']),empty($_POST['name']))
 include __DIR__.'/database.php';
 $login=$_POST['login_txt'];
