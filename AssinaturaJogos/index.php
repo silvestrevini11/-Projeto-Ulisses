@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkpoint</title>
-
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
+<?php
+include __DIR__.'/includes/head.php';
+include __DIR__.'/database.php';
+?>
 <!-- CABEÇARIO --> 
     <header class="header">
     <div class="logo">
@@ -35,82 +29,82 @@
 
     <section class="Games">
 
-        <div class="capa">
-            <a href="JogoTela.php?id=1">
-                <img class="fotoC" src="IMG/Far_Cry_4.png" alt="Far Cry 4">
-            </a>
-            <p class="legenda">Far Cry 4</p>
-            <p class="preço">R$ 49,99</p>
-        </div>
+       <!-- Avisando isso aqui porque bem provavel que ninguem vai entender direito se eu tentar explicar na sala :P-->
+     <!-- O Codigo abaixo serve para colocar os jogos de maneira mais facil, fazendo a gente apenas precisar colocar a foto na pasta + as informações no SQL denada-->
+      <!-- não precisa mexer nesse codigo para melhorar a maneira de colocar jogos, a não ser que queira colocar umas decorações a mais ou mais informações-->
+       <!-- AGORA PARA A EXPLICAÇÃO, APENAS LEIA OS COMENTARIOS -->
+<?php
 
-        <div class="capa">
-            <a href="JogoTela.php?id=2">
-                <img class="fotoC" src="IMG/Lego_Batman.png" alt="Lego Batman">
-            </a>
-            <p class="legenda">Lego Batman</p>
-            <p class="preço">R$ 278,90</p>
-        </div>
+$sql = $conn->query("SELECT * FROM jogos"); // busca os jogos, pegando a conexão e colocando na variavel SQL
+$jogos = $sql->fetchAll(); //os jogos pegam tudo do sql, basicamente todas as colunas do jogos estão aqui
 
-        <div class="capa">
-            <a href="JogoTela.php?id=3">
-                <img class="fotoC" src="IMG/God_Of_War_II.png" alt="God of War II">
-            </a>
-            <p class="legenda">God of War II</p>
-            <p class="preço">R$ 150,90</p>
-        </div>
+foreach ($jogos as $jogo) { //voces sabem C# então não preciso explicar o "for" muito menos o "foreach" que é mais facil
+    $nomeExibicao = str_replace(["_"], " ", $jogo['nome_jogo']); //troca os traços e underlines por espaços em branco, para não estragar os nomes e deixar com espaço
+?>
 
-        <div class="capa">
-            <a href="JogoTela.php?id=4">
-                <img class="fotoC" src="IMG/Uma_Musume_Pretty_Derby.png" alt="">
-            </a>
-            <p class="legenda">Uma Musume Pretty Derby</p>
-            <p class="preço">R$ 49,99</p>
-        </div>
+    <div class="capa">
 
-        <div class="capa">
-            <a href="JogoTela.php?id=5">
-                <img class="fotoC" src="IMG/Devil_May_Cry_3.png" alt="">
-            </a>
-            <p class="legenda">Devil May Cry 3</p>
-            <p class="preço">R$ 18,99</p>
-        </div>
+        <a href="JogoTela.php?id=<?= $jogo['id_jogo'] ?>"> <!--manda pro JogoTela com o ID do jogo de agora-->
+            <img class="fotoC" src="IMG/<?php echo $jogo['nome_jogo']; ?>.png"><!--pega a foto do nome do jogo de agora e adiciona ".PNG" TODAS AS FOTOS DEVEM SER .PNG AQUI A GENTE NÃO COAGULA COM JPG-->
+        </a>
 
-        <div class="capa">
-            <a href="JogoTela.php?id=6">
-                <img class="fotoC" src="IMG/Five_Nights_at_Freddys_Security_Breach.png" alt="">
-            </a>
-            <p class="legenda">Five Nights at Freddys Security Breach</p>
-            <p class="preço">R$ 191,59</p>
-        </div>
+        <p class="legenda">
+            <?php echo htmlspecialchars($nomeExibicao); ?><!--Pega o nome do jogo e exibe-->
+        </p>
 
-        <div class="capa">
-            <a href="JogoTela.php?id=7">
-                <img class="fotoC" src="IMG/Honkai_Star_Rail.png" alt="">
-            </a>
-            <p class="legenda">Honkai: Star Rail</p>
-            <p class="preço">R$ 59,99</p>
-        </div>
-
-        <div class="capa">
-            <a href="JogoTela.php?id=8">
-                <img class="fotoC" src="IMG/Shadow_of_Mordor.png" alt="">
-            </a>
-            <p class="legenda">Shadow of Mordor</p>
-            <p class="preço">R$ 39,99</p>
-        </div>
+        <p class="preço">
+            R$ <?php echo $jogo['preco_jogo']; ?><!--Pega o preço do jogo e exibe-->
+        </p>
+<!-- e é tudo isso por hoje pe-pe-pe-pessoal
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⢨⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣼⠸⡀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣇⢧⡀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⡏⣝⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡿⠿⠁⢸⣿⡸⣿⣦⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣷⢹⣷⣜⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣛⣯⣭⣶⣶⣶⣶⠿⠤⠀⠀⠁⣸⢿⣧⢻⣿⣷⣄⢩⣭⣭⣭⣝⣉⡛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣧⠙⣿⣧⡙⠿⣿⣿⣿⣿⣿⡿⢋⣡⣼⣿⣿⣿⡿⠟⣋⡭⠔⢚⣩⣤⣶⡆⣿⢸⣿⣆⢻⣿⣿⣦⠰⣶⣶⣤⠌⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣇⠈⢿⣿⣷⣮⡙⠻⣿⡏⣀⠻⣿⠿⢟⠋⠁⠀⣨⣤⣶⣿⣿⣿⣿⣿⡇⢸⢸⣿⣿⣆⢻⣿⣿⣇⠙⠿⠋⠀⡄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⠈⣦⠹⣿⣿⣿⣦⡌⠈⣙⠓⢒⠊⡁⠰⠾⠇⠀⠹⣿⣿⡿⠿⠛⡋⠁⠘⡇⢿⣿⣿⣆⢻⣿⣿⡄⠀⠀⣼⣿⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⡀⢻⢳⣌⠻⣿⣿⣿⡄⣿⠇⡿⡇⢿⣧⡐⣤⡆⠀⠉⠁⢀⣠⣤⣶⣾⡆⢻⡌⢿⣿⣿⡌⣿⣿⠃⠀⠸⠿⢿⣇⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣧⠈⢆⠻⣷⡘⢿⣿⡇⠟⡰⢁⢻⣦⣬⡤⢸⣧⠀⠀⣾⣿⣿⣿⣿⣿⣿⡈⢿⣌⠻⣿⢃⣿⡟⣠⢸⣶⣄⠲⣤⣄⠐⣭⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣧⡈⢷⣜⠻⣎⢻⡇⠺⣇⠻⢠⣼⠋⡀⢸⡋⠀⣸⣿⣿⣿⠿⠟⣋⣩⡀⠈⣿⣷⣄⣼⣿⣥⣿⡺⢿⣿⣷⡈⢿⣷⡈⢿⣧⡉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⠗⠀⠙⢷⣦⠄⠀⠳⠘⣆⣿⠁⠚⡠⠟⠁⣰⠿⠛⣉⡄⠒⢿⣿⣿⠿⣆⢻⣿⣿⣿⡿⣿⣿⣿⣶⡌⠙⢿⡄⢿⣿⡌⢻⣿⣦⡈⠻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⢏⣤⣎⠀⠀⢡⣾⡏⠃⠀⣿⡇⢠⠬⠁⣀⣠⣴⣾⣿⣿⣿⡆⠘⣿⣿⣧⢹⡎⣿⣿⣿⣷⣜⢿⣿⣿⣿⣦⡀⠀⠘⣿⣿⡌⣿⣿⣿⣆⠙⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⠏⣾⠋⠁⣰⠂⣾⡟⣿⣷⣶⣶⣶⣶⣾⣿⣿⡏⢿⣿⣿⣿⣿⣿⡄⣿⣿⣿⣇⢷⠘⣿⣿⣿⣿⣧⡙⢿⣿⣿⣿⣆⠀⢹⣿⣧⢸⣿⣿⣿⣆⠘⣿⣿⣿⣿⣿
+⣿⣿⣿⠀⠼⠂⠠⠋⣼⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿⡏⣿⡌⣿⣿⣿⣿⣿⣧⢸⢸⣿⣿⢸⠀⠘⣿⣿⣿⣿⣷⡈⢻⣿⣿⣿⣧⠘⣿⣿⡀⣿⣿⣿⣿⣆⠘⣿⣿⣿⣿
+⣿⡿⠋⢄⠀⠀⣠⣾⣿⢇⣿⢃⣿⣿⣿⣿⣿⣿⣿⣷⢻⡇⡍⢿⣿⣿⢹⣿⠈⢸⣿⣿⢸⢸⣆⠈⢿⣿⣿⣿⣿⡀⠹⣿⣿⣿⡆⢿⣿⡇⠙⣿⣿⣿⣿⡀⢸⣿⣿⣿
+⣿⡀⠲⠏⠀⠘⣿⣿⣿⢸⡏⣼⣿⣿⣿⣿⣿⣿⣼⣿⢸⡇⣿⢸⣿⣿⡎⣿⡆⢸⣿⣿⠀⠸⣿⣷⣄⠙⢿⣿⣿⣷⠀⠙⣿⣿⡇⢸⣿⡇⣰⠸⣿⣿⣿⣇⠀⣿⣿⣿
+⣿⣷⠀⢰⠃⠀⣿⢿⣿⢸⢡⣿⠋⣿⣿⣿⡟⣿⢸⡇⡈⡇⢸⢸⣿⣿⡇⣿⠀⢸⣿⣿⠀⣀⠈⠻⠿⢷⣦⡙⢿⣿⣧⠁⢹⣿⡇⠸⠿⠇⢸⣇⢻⣿⣿⢻⠀⣿⣿⣿
+⣿⣿⣧⡀⠀⢸⡟⢸⡇⢸⢸⣿⢸⣿⣿⣿⡇⡏⢸⡇⡇⡇⠸⢸⣿⣿⣇⡟⠀⢈⣽⡿⠀⣿⣧⡀⠘⣈⠙⢿⣷⣭⣿⡇⠀⠡⣶⣿⣿⣿⣶⣤⠘⢿⣿⡜⡅⢸⣿⣿
+⣿⣿⣿⡇⢸⢼⡇⢸⡇⠈⠈⣿⢸⣿⣿⣿⣇⡇⠸⢰⡇⠃⡄⢸⣿⡏⠙⠁⠄⢼⠿⠃⣠⣿⣿⣿⣄⠈⣁⣀⠉⠛⠿⠃⣼⣿⣿⣍⠟⠉⣀⣤⣤⡀⠻⢸⡇⢸⣿⣿
+⣿⣿⣿⣧⠀⠸⡇⠘⡇⡆⠀⠹⠀⢿⣿⣿⡿⠇⠀⠘⡇⢰⠃⠘⠁⠀⠀⣀⠀⠀⠀⠀⠈⠙⠿⣿⣿⣿⣦⣝⡻⠶⠀⣾⣿⣿⣿⠋⢠⣾⣿⢻⣿⣿⣦⢸⡇⢸⣿⣿
+⣿⣿⣿⣿⡄⡄⢿⡄⠁⠻⠀⠆⠀⠘⢿⠿⠛⠀⠠⠀⠁⠀⠀⠀⣴⣶⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⢸⣿⣿⣿⠇⢀⣾⣿⣿⠇⣿⣿⣿⡈⠃⢸⣿⣿
+⣿⣿⣿⣿⣿⡀⠈⠻⠀⠘⠃⠀⠀⠀⠀⠀⠀⠀⢤⣤⡆⠀⠀⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⡀⣼⣿⣿⣿⠀⢸⣿⣶⣶⣾⣿⣿⣿⡇⠀⣾⣿⣿
+⣿⣿⣿⣿⣿⣿⣌⠀⠀⣠⣶⣿⠋⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠙⡿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡇⣿⣿⣿⣿⠀⢸⣿⣿⠿⠛⣋⣉⠛⡇⠀⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⡏⠀⠀⢿⣿⡇⠀⠀⠀⠀⠀⠀⠀⣿⣶⡀⠀⠺⠷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣇⢸⣿⣿⣿⡀⠸⠋⣡⣶⣿⣿⣿⡇⠁⣰⣬⡻⣿
+⣿⣿⣿⣿⣿⣿⠀⠀⠀⠘⣿⡁⠀⠀⠀⠀⠀⠀⠀⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⡈⣿⠟⢋⠁⠀⠸⣿⣿⣿⣿⣿⠇⠀⢿⣿⣿⣦
+⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠻⠿⠂⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣶⣤⣤⣀⣀⣠⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠁⣼⣿⣷⣆⠀⠙⣿⣿⣿⠃⡀⠀⠀⠈⢛⣯
+⣿⣿⣿⣿⣿⣿⣿⣷⡀⢀⠀⠀⠀⠀⠀⢀⣴⡟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⠘⢿⣿⣿⣷⣄⡀⠉⢁⣴⠁⢀⣤⣤⣪⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣁⠀⣄⢠⣶⣿⣿⣿⣌⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢠⡶⠄⣠⣈⠙⠛⡉⠀⡐⣿⡏⠀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠈⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⡄⠀⠀⣿⡏⠈⣡⣴⣿⠁⣿⡇⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢻⣿⣿⣿⣿⣿⣭⣷⣶⣶⣶⣮⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⣴⠀⣿⠁⣾⣿⠹⣿⢸⣿⡇⢰⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀⣰⠀⣿⠀⣿⢀⣿⣿⡀⣿⡄⣿⡇⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⣴⣿⣿⠀⣿⡄⣿⢸⣿⣿⡇⣿⡇⣿⡇⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠈⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣉⣤⣾⣿⣿⣿⣿⠀⣿⣇⢹⠀⢹⣿⡇⢹⣧⢸⡇⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠰⣿⡆⡙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠛⣉⣴⣾⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⡀⠀⠀⣿⡇⡈⣿⡄⡇⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⣿⡇⡇⢠⠙⠻⠿⠟⠋⣩⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠀⡉⣿⣷⠀⠀⠙⢳⣷⢹⣷⡀⠀⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢰⣿⠃⡇⢸⠀⣷⣿⡏⣤⣉⣛⣛⠛⠻⠿⢿⣿⡿⢋⣩⣤⣶⣾⡿⠇⠈⠀⠀⠀⠀⢸⢿⣇⢻⣷⡀⢹⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⣿⡿⢰⠇⠈⠘⠛⠛⠃⠙⠻⢿⣿⣿⣿⣷⣶⣦⠁⣾⣿⣿⡟⠉⠀⣤⠄⠀⠀⠀⠀⠀⠇⣿⣎⢻⣷⡄⠹⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣸⣿⠃⠏⡀⠀⣶⡾⠋⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⡇⣿⡿⠋⠀⠀⠀⠁⠀⠀⠀⠀⠀⠈⠦⠙⢿⣆⠻⣿⣄⠘⢿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⢠⣿⠃⠀⡐⠁⠀⠈⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠇⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣷⣦⣄⡈⠳⠌⢻⣦⡈⢻
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢠⠟⠁⣀⣤⣴⣾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣷⣶⣶⣬⣭⣀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣉⣁⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⣲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿-->
+    </div>
+<?php
+}
+?>
 
     </section>
 
 
 </body>
 </html>
-
-<!-- 
-         <div class="capa">
-            <a href="JogoTela.php?id=">
-                <img class="fotoC" src="IMG/" alt="">
-            </a>
-            <p class="legenda"></p>
-            <p class="preço"></p>
-        </div>
--->

@@ -1,7 +1,6 @@
 <?php
 include __DIR__.'/includes/head.php';
 include __DIR__.'/database.php';
-include __DIR__.'/verificar.php';
 
 // Valida se o id foi passado e é numérico
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -26,7 +25,7 @@ if (!$jogo) {
 ?>
 
 <?php
-$nomeExibicao = str_replace(["_", "-"], " ", $jogo->nome_jogo);
+$nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
 ?>
 
 <section class="jogo-container">
