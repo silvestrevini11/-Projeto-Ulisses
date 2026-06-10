@@ -7,6 +7,8 @@ include __DIR__.'/includes/head.php';
 
     <h1 class="Cadastro_titulo" >Cadastrar</h1>
 
+<div class="FORM-INPUT">
+
     <div class="form-cad-login">
     <label class="label-cad">>Login:</label>
     <input type="text" name="login_txt" maxLength="50">
@@ -26,6 +28,8 @@ include __DIR__.'/includes/head.php';
         <label class="label-cad">>E-mail</label>
         <input type="email" name="email_txt" maxLength="50">
     </div>
+
+</div>
 
    <button class="btn-login" type="submit" >Cadastrar</button>
 </form>

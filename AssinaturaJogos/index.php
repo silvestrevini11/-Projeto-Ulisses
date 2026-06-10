@@ -36,41 +36,81 @@
     <section class="Games">
 
         <div class="capa">
-
             <a href="JogoTela.php?id=1">
-                <img class="fotoC" src="IMG/FarCry4.png" alt="Far Cry 4">
+                <img class="fotoC" src="IMG/Far_Cry_4.png" alt="Far Cry 4">
             </a>
-
             <p class="legenda">Far Cry 4</p>
             <p class="preço">R$ 49,99</p>
-
         </div>
 
         <div class="capa">
-
             <a href="JogoTela.php?id=2">
-                <img class="fotoC" src="IMG/LegoBatman.png" alt="Lego Batman">
+                <img class="fotoC" src="IMG/Lego_Batman.png" alt="Lego Batman">
             </a>
-
             <p class="legenda">Lego Batman</p>
             <p class="preço">R$ 278,90</p>
-
         </div>
 
         <div class="capa">
-
             <a href="JogoTela.php?id=3">
-                <img class="fotoC" src="IMG/GodOfWarII.png" alt="God of War II">
+                <img class="fotoC" src="IMG/God_Of_War_II.png" alt="God of War II">
             </a>
-
             <p class="legenda">God of War II</p>
             <p class="preço">R$ 150,90</p>
-
         </div>
 
+        <div class="capa">
+            <a href="JogoTela.php?id=4">
+                <img class="fotoC" src="IMG/Uma_Musume_Pretty_Derby.png" alt="">
+            </a>
+            <p class="legenda">Uma Musume Pretty Derby</p>
+            <p class="preço">R$ 49,99</p>
+        </div>
+
+        <div class="capa">
+            <a href="JogoTela.php?id=5">
+                <img class="fotoC" src="IMG/Devil_May_Cry_3.png" alt="">
+            </a>
+            <p class="legenda">Devil May Cry 3</p>
+            <p class="preço">R$ 18,99</p>
+        </div>
+
+        <div class="capa">
+            <a href="JogoTela.php?id=6">
+                <img class="fotoC" src="IMG/Five_Nights_at_Freddys_Security_Breach.png" alt="">
+            </a>
+            <p class="legenda">Five Nights at Freddys Security Breach</p>
+            <p class="preço">R$ 191,59</p>
+        </div>
+
+        <div class="capa">
+            <a href="JogoTela.php?id=7">
+                <img class="fotoC" src="IMG/Honkai_Star_Rail.png" alt="">
+            </a>
+            <p class="legenda">Honkai: Star Rail</p>
+            <p class="preço">R$ 59,99</p>
+        </div>
+
+        <div class="capa">
+            <a href="JogoTela.php?id=8">
+                <img class="fotoC" src="IMG/Shadow_of_Mordor.png" alt="">
+            </a>
+            <p class="legenda">Shadow of Mordor</p>
+            <p class="preço">R$ 39,99</p>
+        </div>
 
     </section>
 
 
 </body>
 </html>
+
+<!-- 
+         <div class="capa">
+            <a href="JogoTela.php?id=">
+                <img class="fotoC" src="IMG/" alt="">
+            </a>
+            <p class="legenda"></p>
+            <p class="preço"></p>
+        </div>
+-->

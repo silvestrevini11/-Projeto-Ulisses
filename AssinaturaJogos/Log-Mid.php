@@ -19,6 +19,7 @@ $stmt->execute();
 $quant=$stmt->rowCount();
 if($quant!=1){
     header('Location:index.php?login=false');
+    
     die();
 }else{
 $row=$stmt->fetch(PDO::FETCH_OBJ);
