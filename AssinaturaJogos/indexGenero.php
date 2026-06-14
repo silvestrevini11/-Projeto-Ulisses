@@ -64,9 +64,16 @@ foreach ($jogos as $jogo) { //voces sabem C# então não preciso explicar o "for
         </p>
 
 
+        <?php if($jogo['preco_jogo'] < 1){
+            ?>
+        <p class="preço">Gratis<!--Pega o preço do jogo e exibe--></p>
+        <?php
+        }else{?>
         <p class="preço">
             R$ <?php echo $jogo['preco_jogo']; ?><!--Pega o preço do jogo e exibe-->
         </p>
+        <?php
+        }?>
 
     </div>
 <?php

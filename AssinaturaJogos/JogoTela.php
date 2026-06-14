@@ -66,11 +66,21 @@ $nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
 
         <p class="jogo-data">Lançamento: <?php echo date('d/m/Y', strtotime($jogo->data_lancamento)); ?></p>
 
-
+    <?php if($jogo->preco_jogo == 0){
+    ?>        
+        <div class="jogo-compra">
+            <span class="jogo-preco">Gratis</span>
+            <button class="btn-comprar">Baixar</button>
+        </div>
+        <?php
+    }else{
+        ?>
         <div class="jogo-compra">
             <span class="jogo-preco">R$ <?php echo number_format($jogo->preco_jogo, 2, ',', '.'); ?></span>
             <button class="btn-comprar">Comprar</button>
         </div>
+        <?php
+    }?>
 
         <h1 class="Nota-avaliação">Avaliação:</h1>
         <?php if($jogo->nota_jogo >= 9) {
