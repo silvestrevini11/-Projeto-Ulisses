@@ -72,6 +72,45 @@ $nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
             <button class="btn-comprar">Comprar</button>
         </div>
 
+        <h1 class="Nota-avaliação">Avaliação:</h1>
+        <?php if($jogo->nota_jogo >= 9) {
+            ?>
+            <div class="Nota-container" style="border-color: #009a1a;background-color: #22ff00d8;">
+            <span class="Nota" style = "color: #009a1a"> <?php echo htmlspecialchars($jogo->nota_jogo) ?></span>
+            </div>
+            
+            <?php
+            }else if ($jogo->nota_jogo >= 6.5) {
+                ?>
+                <div class="Nota-container" style="border-color: #538300fe;background-color: #a2ff00e6;">
+            <span class="Nota" style = "color: #538300fe"> <?php echo htmlspecialchars($jogo->nota_jogo) ?></span>
+            </div>
+
+                <?php
+            }else if ($jogo->nota_jogo >= 5) {
+                ?>
+                <div class="Nota-container" style="border-color: #b2b500;background-color: #eeff00;">
+            <span class="Nota" style = "color: #b2b500"> <?php echo htmlspecialchars($jogo->nota_jogo) ?></span>
+            </div>
+
+                <?php
+            }else if ($jogo->nota_jogo >= 2.5) {
+                ?>
+                <div class="Nota-container" style="border-color: #b57000;background-color: #ff9d00;">
+            <span class="Nota" style = "color: #b57000"> <?php echo htmlspecialchars($jogo->nota_jogo) ?></span>
+            </div>
+
+                <?php
+            }else if ($jogo->nota_jogo >= 0) {
+                ?>
+                <div class="Nota-container" style="border-color: #b50000;background-color: #ff0000;">
+            <span class="Nota" style = "color: #b50000"> <?php echo htmlspecialchars($jogo->nota_jogo) ?></span>
+            </div>
+
+                <?php
+            }
+         ?>
+
     </div>
 
     

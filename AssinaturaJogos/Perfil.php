@@ -11,6 +11,13 @@ echo '<h1 class="titulo_perfil">'.'Bem Vindo(a) '.$_SESSION['usuario']['nome'].'
     </section>
     <!-- CABEÇARIO --> 
     <header class="header">
+           <div class="logo">
+      <img class="logo" src="IMG/Carrinho.png" alt="">
+    </div>
+
+        <div class="header-content">
+            <a href="index.php" style="text-decoration:none;"><h1 class="titulo"> CH<span class="highlight">3</span>CKPOINT </h1></a>
+        </div>
 <section class="perfil-options">
 <a  href="logout.php" class="link">Sair</a>
 <a  href="form-update.php" class="link">Alterar</a>
