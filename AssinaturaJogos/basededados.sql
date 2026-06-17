@@ -14,9 +14,10 @@ CREATE TABLE IF NOT EXISTS plataformas (
 CREATE TABLE IF NOT EXISTS usuario (
     id_user INT AUTO_INCREMENT,
     nome_user VARCHAR(50) NOT NULL,
-    login_user VARCHAR(50) NOT NULL,
+    login_user VARCHAR(50) NOT NULL UNIQUE,
     senha_user VARCHAR(50) NOT NULL,
     email_user VARCHAR(50) NOT NULL UNIQUE,
+    saldo INT DEFAULT 1000,
     PRIMARY KEY(id_user)
 );
 
@@ -37,7 +38,7 @@ CREATE TABLE IF NOT EXISTS jogos (
     FOREIGN KEY (id_genero) REFERENCES generos(id_genero),
     FOREIGN KEY (id_plataforma) REFERENCES plataformas(id_plataforma)
 );
-
+/*
 CREATE TABLE IF NOT EXISTS itens_do_pedido (
     item_id INT AUTO_INCREMENT,
     pedido_id INT NOT NULL,
@@ -48,6 +49,23 @@ CREATE TABLE IF NOT EXISTS itens_do_pedido (
     PRIMARY KEY(item_id),
     FOREIGN KEY(id_jogo) REFERENCES jogos(id_jogo),
     FOREIGN KEY(id_plataforma) REFERENCES plataformas(id_plataforma)
+);
+*/
+create table if not exists carrinho(
+id_carrinho INT PRIMARY KEY AUTO_INCREMENT,
+id_jogo INT,
+id_user INT,
+FOREIGN KEY(id_jogo) REFERENCES jogos(id_jogo),
+FOREIGN KEY(id_user) REFERENCES usuario(id_user)
+);
+
+CREATE TABLE biblioteca (
+id_biblioteca INT PRIMARY KEY AUTO_INCREMENT,
+id_jogo INT,
+id_user INT,
+data_compra DATETIME DEFAULT CURRENT_TIMESTAMP,
+FOREIGN KEY(id_jogo) REFERENCES jogos(id_jogo),
+FOREIGN KEY(id_user) REFERENCES usuario(id_user)    
 );
 
 

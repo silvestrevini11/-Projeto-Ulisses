@@ -2,7 +2,17 @@
 include __DIR__.'/includes/head.php';
 ?>
 
-<section class="Sec-Cadastro-tabela">
+<header class="header">
+    <div class="logo">
+      <img class="logo" src="IMG/Carrinho.png" alt="">
+    </div>
+
+    <div class="header-content">
+        <a href="index.php" style="text-decoration:none;"><h1 class="titulo"> CH<span class="highlight">3</span>CKPOINT </h1></a>
+    </div>
+</header>
+
+<section class="Sec-Cadastro-tabela" style="margin-top:140px">
 <form class="Cadastro-tabela" action="insert-user.php" method="post">
 
     <h1 class="Cadastro_titulo" >Cadastrar</h1>

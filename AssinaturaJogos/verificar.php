@@ -5,7 +5,7 @@ session_start();
 
 if (!isset($_SESSION['usuario'])) {
     echo "<script>
-        alert('Você precisa estar cadastrado para acessar este jogo!');
+        alert('Você precisa estar cadastrado para acessar isto!');
         window.location.href='Cad-User.php';
     </script>";
     exit();

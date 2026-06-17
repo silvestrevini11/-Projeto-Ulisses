@@ -20,6 +20,7 @@ include __DIR__.'/database.php';
 </div>
 
 <div class="butões-reg">
+        <a href="Perfil.php"><input class="btn" type="button" value="Perfil"></a>
     <a href="Login-user.php"><input class="btn" type="button" value="Login"></a>    
     <a href="Cad-User.php"><input class="btn" type="button" value="Cadastrar-se"></a>
 </div>

@@ -1,6 +1,7 @@
 <?php
 include __DIR__.'/includes/head.php';
 include __DIR__.'/database.php';
+include __DIR__.'/verificar.php';
 
 // Valida se o id foi passado e é numérico
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -70,14 +71,14 @@ $nomeExibicao = str_replace(["_"], " ", $jogo->nome_jogo);
     ?>        
         <div class="jogo-compra">
             <span class="jogo-preco">Gratis</span>
-            <button class="btn-comprar">Baixar</button>
+            <button class="btn-comprar"><a style="text-decoration: none;"href="adicionarCarrinho.php?id=<?= $jogo->id_jogo ?>"><h1 style="font-size:30px">Adicionar ao Carrinho</h1></a></button>
         </div>
         <?php
     }else{
         ?>
         <div class="jogo-compra">
             <span class="jogo-preco">R$ <?php echo number_format($jogo->preco_jogo, 2, ',', '.'); ?></span>
-            <button class="btn-comprar">Comprar</button>
+            <button class="btn-comprar"><a style="text-decoration: none;"href="adicionarCarrinho.php?id=<?= $jogo->id_jogo ?>"><h1 style="font-size:30px">Adicionar ao Carrinho</h1></a></button>
         </div>
         <?php
     }?>
