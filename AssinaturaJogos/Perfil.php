@@ -4,7 +4,7 @@ include __DIR__.'/database.php';
 include __DIR__.'/verificar.php';
 ?>
 
-<section class="All-perfil">
+<section class="All-perfil" style="margin-top:140px">
     <?php
 echo '<h1 class="titulo_perfil">'.'Bem Vindo(a) '.$_SESSION['usuario']['nome'].'</h1>';
     ?>
