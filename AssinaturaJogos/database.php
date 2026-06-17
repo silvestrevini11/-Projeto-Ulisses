@@ -2,7 +2,7 @@
 //Variáveis de conexão
 $host="localhost";
 $user="root";
-$password="";
+$password="root";
 $port=3306;
 $database="AssinaturaJogos";
 

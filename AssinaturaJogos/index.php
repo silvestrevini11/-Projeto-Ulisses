@@ -2,11 +2,15 @@
 include __DIR__.'/includes/head.php';
 include __DIR__.'/database.php';
 ?>
-
+<?php
+$sql = $conn->query("SELECT * FROM jogos"); // busca os jogos, pegando a conexão e colocando na variavel SQL
+$jogos = $sql->fetchAll(); //os jogos pegam tudo do sql, basicamente todas as colunas do jogos 
+$usuario = $sql->fetchAll();
+?>
 <!-- CABEÇARIO --> 
     <header class="header">
     <div class="logo">
-      <img class="logo" src="IMG/Carrinho.png" alt="">
+      <img class="logoimg" src="IMG/Checkpoint.png" alt="">
     </div>
 
         <div class="header-content">
@@ -20,7 +24,7 @@ include __DIR__.'/database.php';
 </div>
 
 <div class="butões-reg">
-    <a href="Perfil.php"><input class="btn" type="button" value="Perfil"></a>
+    <a href="Perfil.php?"><input class="btn" type="button" value="Perfil"></a>
     <a href="Login-user.php"><input class="btn" type="button" value="Login"></a>    
     <a href="Cad-User.php"><input class="btn" type="button" value="Cadastrar-se"></a>
 </div>
@@ -39,16 +43,21 @@ include __DIR__.'/database.php';
       <!-- não precisa mexer nesse codigo para melhorar a maneira de colocar jogos, a não ser que queira colocar umas decorações a mais ou mais informações-->
        <!-- AGORA PARA A EXPLICAÇÃO, APENAS LEIA OS COMENTARIOS -->
 <?php
-$sql = $conn->query("SELECT * FROM jogos"); // busca os jogos, pegando a conexão e colocando na variavel SQL
-$jogos = $sql->fetchAll(); //os jogos pegam tudo do sql, basicamente todas as colunas do jogos estão aqui
+
+// estão aqui
 
 foreach ($jogos as $jogo) { //voces sabem C# então não preciso explicar o "for" muito menos o "foreach" que é mais facil
     $nomeExibicao = str_replace(["_"], " ", $jogo['nome_jogo']); //troca os traços e underlines por espaços em branco, para não estragar os nomes e deixar com espaço
 ?>
-<script src="js/busca.js"></script> 
+
+
     <div class="capa">
         <div class="cima-capa"><h1></h1></div>
 
+        <!-- link do Java-Script não mecher-->   
+        <script src="js/busca.js"></script> 
+        <script src="js/estrela.js"></script>
+      
 
         <a href="JogoTela.php?id=<?= $jogo['id_jogo'] ?>"> <!--manda pro JogoTela com o ID do jogo de agora-->
             <img class="fotoC" src="IMG/<?php echo $jogo['nome_jogo']; ?>.png"><!--pega a foto do nome do jogo de agora e adiciona ".PNG" TODAS AS FOTOS DEVEM SER .PNG AQUI A GENTE NÃO COAGULA COM JPG-->
@@ -79,47 +88,3 @@ foreach ($jogos as $jogo) { //voces sabem C# então não preciso explicar o "for
     </section>
 </body>
 </html>
-
-<!--
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⢨⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣼⠸⡀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣇⢧⡀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⡏⣝⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡿⠿⠁⢸⣿⡸⣿⣦⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣷⢹⣷⣜⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣛⣯⣭⣶⣶⣶⣶⠿⠤⠀⠀⠁⣸⢿⣧⢻⣿⣷⣄⢩⣭⣭⣭⣝⣉⡛⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣧⠙⣿⣧⡙⠿⣿⣿⣿⣿⣿⡿⢋⣡⣼⣿⣿⣿⡿⠟⣋⡭⠔⢚⣩⣤⣶⡆⣿⢸⣿⣆⢻⣿⣿⣦⠰⣶⣶⣤⠌⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣇⠈⢿⣿⣷⣮⡙⠻⣿⡏⣀⠻⣿⠿⢟⠋⠁⠀⣨⣤⣶⣿⣿⣿⣿⣿⡇⢸⢸⣿⣿⣆⢻⣿⣿⣇⠙⠿⠋⠀⡄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⠈⣦⠹⣿⣿⣿⣦⡌⠈⣙⠓⢒⠊⡁⠰⠾⠇⠀⠹⣿⣿⡿⠿⠛⡋⠁⠘⡇⢿⣿⣿⣆⢻⣿⣿⡄⠀⠀⣼⣿⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⡀⢻⢳⣌⠻⣿⣿⣿⡄⣿⠇⡿⡇⢿⣧⡐⣤⡆⠀⠉⠁⢀⣠⣤⣶⣾⡆⢻⡌⢿⣿⣿⡌⣿⣿⠃⠀⠸⠿⢿⣇⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣧⠈⢆⠻⣷⡘⢿⣿⡇⠟⡰⢁⢻⣦⣬⡤⢸⣧⠀⠀⣾⣿⣿⣿⣿⣿⣿⡈⢿⣌⠻⣿⢃⣿⡟⣠⢸⣶⣄⠲⣤⣄⠐⣭⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣧⡈⢷⣜⠻⣎⢻⡇⠺⣇⠻⢠⣼⠋⡀⢸⡋⠀⣸⣿⣿⣿⠿⠟⣋⣩⡀⠈⣿⣷⣄⣼⣿⣥⣿⡺⢿⣿⣷⡈⢿⣷⡈⢿⣧⡉⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⠗⠀⠙⢷⣦⠄⠀⠳⠘⣆⣿⠁⠚⡠⠟⠁⣰⠿⠛⣉⡄⠒⢿⣿⣿⠿⣆⢻⣿⣿⣿⡿⣿⣿⣿⣶⡌⠙⢿⡄⢿⣿⡌⢻⣿⣦⡈⠻⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⢏⣤⣎⠀⠀⢡⣾⡏⠃⠀⣿⡇⢠⠬⠁⣀⣠⣴⣾⣿⣿⣿⡆⠘⣿⣿⣧⢹⡎⣿⣿⣿⣷⣜⢿⣿⣿⣿⣦⡀⠀⠘⣿⣿⡌⣿⣿⣿⣆⠙⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⠏⣾⠋⠁⣰⠂⣾⡟⣿⣷⣶⣶⣶⣶⣾⣿⣿⡏⢿⣿⣿⣿⣿⣿⡄⣿⣿⣿⣇⢷⠘⣿⣿⣿⣿⣧⡙⢿⣿⣿⣿⣆⠀⢹⣿⣧⢸⣿⣿⣿⣆⠘⣿⣿⣿⣿⣿
-⣿⣿⣿⠀⠼⠂⠠⠋⣼⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿⡏⣿⡌⣿⣿⣿⣿⣿⣧⢸⢸⣿⣿⢸⠀⠘⣿⣿⣿⣿⣷⡈⢻⣿⣿⣿⣧⠘⣿⣿⡀⣿⣿⣿⣿⣆⠘⣿⣿⣿⣿
-⣿⡿⠋⢄⠀⠀⣠⣾⣿⢇⣿⢃⣿⣿⣿⣿⣿⣿⣿⣷⢻⡇⡍⢿⣿⣿⢹⣿⠈⢸⣿⣿⢸⢸⣆⠈⢿⣿⣿⣿⣿⡀⠹⣿⣿⣿⡆⢿⣿⡇⠙⣿⣿⣿⣿⡀⢸⣿⣿⣿
-⣿⡀⠲⠏⠀⠘⣿⣿⣿⢸⡏⣼⣿⣿⣿⣿⣿⣿⣼⣿⢸⡇⣿⢸⣿⣿⡎⣿⡆⢸⣿⣿⠀⠸⣿⣷⣄⠙⢿⣿⣿⣷⠀⠙⣿⣿⡇⢸⣿⡇⣰⠸⣿⣿⣿⣇⠀⣿⣿⣿
-⣿⣷⠀⢰⠃⠀⣿⢿⣿⢸⢡⣿⠋⣿⣿⣿⡟⣿⢸⡇⡈⡇⢸⢸⣿⣿⡇⣿⠀⢸⣿⣿⠀⣀⠈⠻⠿⢷⣦⡙⢿⣿⣧⠁⢹⣿⡇⠸⠿⠇⢸⣇⢻⣿⣿⢻⠀⣿⣿⣿
-⣿⣿⣧⡀⠀⢸⡟⢸⡇⢸⢸⣿⢸⣿⣿⣿⡇⡏⢸⡇⡇⡇⠸⢸⣿⣿⣇⡟⠀⢈⣽⡿⠀⣿⣧⡀⠘⣈⠙⢿⣷⣭⣿⡇⠀⠡⣶⣿⣿⣿⣶⣤⠘⢿⣿⡜⡅⢸⣿⣿
-⣿⣿⣿⡇⢸⢼⡇⢸⡇⠈⠈⣿⢸⣿⣿⣿⣇⡇⠸⢰⡇⠃⡄⢸⣿⡏⠙⠁⠄⢼⠿⠃⣠⣿⣿⣿⣄⠈⣁⣀⠉⠛⠿⠃⣼⣿⣿⣍⠟⠉⣀⣤⣤⡀⠻⢸⡇⢸⣿⣿
-⣿⣿⣿⣧⠀⠸⡇⠘⡇⡆⠀⠹⠀⢿⣿⣿⡿⠇⠀⠘⡇⢰⠃⠘⠁⠀⠀⣀⠀⠀⠀⠀⠈⠙⠿⣿⣿⣿⣦⣝⡻⠶⠀⣾⣿⣿⣿⠋⢠⣾⣿⢻⣿⣿⣦⢸⡇⢸⣿⣿
-⣿⣿⣿⣿⡄⡄⢿⡄⠁⠻⠀⠆⠀⠘⢿⠿⠛⠀⠠⠀⠁⠀⠀⠀⣴⣶⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⡟⢸⣿⣿⣿⠇⢀⣾⣿⣿⠇⣿⣿⣿⡈⠃⢸⣿⣿
-⣿⣿⣿⣿⣿⡀⠈⠻⠀⠘⠃⠀⠀⠀⠀⠀⠀⠀⢤⣤⡆⠀⠀⣾⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⡀⣼⣿⣿⣿⠀⢸⣿⣶⣶⣾⣿⣿⣿⡇⠀⣾⣿⣿
-⣿⣿⣿⣿⣿⣿⣌⠀⠀⣠⣶⣿⠋⠀⠀⠀⠀⠀⠈⠉⠁⠀⠀⠙               ⣿⣿⡇⣿⣿⣿⣿⠀⢸⣿⣿⠿⠛⣋⣉⠛⡇⠀⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⡏⠀⠀⢿⣿⡇⠀⠀⠀⠀⠀⠀⠀⣿⣶⡀⠀⠺⠷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣇⢸⣿⣿⣿⡀⠸⠋⣡⣶⣿⣿⣿⡇⠁⣰⣬⡻⣿
-⣿⣿⣿⣿⣿⣿⠀⠀⠀⠘⣿⡁⠀⠀⠀⠀⠀⠀⠀⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⡈⣿⠟⢋⠁⠀⠸⣿⣿⣿⣿⣿⠇⠀⢿⣿⣿⣦
-⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠻⠿⠂⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣶⣤⣤⣀⣀⣠⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠁⣼⣿⣷⣆⠀⠙⣿⣿⣿⠃⡀⠀⠀⠈⢛⣯
-⣿⣿⣿⣿⣿⣿⣿⣷⡀⢀⠀⠀⠀⠀⠀⢀⣴⡟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⠘⢿⣿⣿⣷⣄⡀⠉⢁⣴⠁⢀⣤⣤⣪⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣁⠀⣄⢠⣶⣿⣿⣿⣌⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢠⡶⠄⣠⣈⠙⠛⡉⠀⡐⣿⡏⠀⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠈⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⡄⠀⠀⣿⡏⠈⣡⣴⣿⠁⣿⡇⢸⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⢻⣿⣿⣿⣿⣿⣭⣷⣶⣶⣶⣮⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⣴⠀⣿⠁⣾⣿⠹⣿⢸⣿⡇⢰⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠁⠀⣰⠀⣿⠀⣿⢀⣿⣿⡀⣿⡄⣿⡇⢸⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢀⣴⣿⣿⠀⣿⡄⣿⢸⣿⣿⡇⣿⡇⣿⡇⢸⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠈⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣉⣤⣾⣿⣿⣿⣿⠀⣿⣇⢹⠀⢹⣿⡇⢹⣧⢸⡇⢸⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠰⣿⡆⡙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠛⣉⣴⣾⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⡀⠀⠀⣿⡇⡈⣿⡄⡇⢸⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⣿⡇⡇⢠⠙⠻⠿⠟⠋⣩⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠀⡉⣿⣷⠀⠀⠙⢳⣷⢹⣷⡀⠀⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢰⣿⠃⡇⢸⠀⣷⣿⡏⣤⣉⣛⣛⠛⠻⠿⢿⣿⡿⢋⣩⣤⣶⣾⡿⠇⠈⠀⠀⠀⠀⢸⢿⣇⢻⣷⡀⢹⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⣿⡿⢰⠇⠈⠘⠛⠛⠃⠙⠻⢿⣿⣿⣿⣷⣶⣦⠁⣾⣿⣿⡟⠉⠀⣤⠄⠀⠀⠀⠀⠀⠇⣿⣎⢻⣷⡄⠹⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣸⣿⠃⠏⡀⠀⣶⡾⠋⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⡇⣿⡿⠋⠀⠀⠀⠁⠀⠀⠀⠀⠀⠈⠦⠙⢿⣆⠻⣿⣄⠘⢿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⢠⣿⠃⠀⡐⠁⠀⠈⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠇⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣷⣦⣄⡈⠳⠌⢻⣦⡈⢻
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⢠⠟⠁⣀⣤⣴⣾⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠺⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣷⣶⣶⣬⣭⣀
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣉⣁⣤⣤⣶⣾⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠔⣲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿-->

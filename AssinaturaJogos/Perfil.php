@@ -4,10 +4,17 @@ include __DIR__.'/database.php';
 include __DIR__.'/verificar.php';
 ?>
 
+<?php
+$sql = $conn->query("SELECT * FROM usuario"); 
+$usuario = $sql->fetchAll();
+?>
+
 <section class="All-perfil" style="margin-top:140px">
+
     <?php
-echo '<h1 class="titulo_perfil">'.'Bem Vindo(a) '.$_SESSION['usuario']['nome'].'</h1>';
+echo '<h1 class="titulo_perfil">'.'Seja Bem Vindo(a) '.$_SESSION['usuario']['nome'].'</h1>';
     ?>
+
     </section>
     <!-- CABEÇARIO --> 
     <header class="header">
@@ -23,6 +30,10 @@ echo '<h1 class="titulo_perfil">'.'Bem Vindo(a) '.$_SESSION['usuario']['nome'].'
 <a  href="logout.php" class="link">Sair</a>
 <a  href="form-update.php" class="link">Alterar</a>
 <a href="delete-user.php" class="link" onclick="return confirmarExclusao(event)">Excluir</a>
+
+
+
+
 
 <script>
 function confirmarExclusao(event) {

@@ -1,6 +1,10 @@
+<section class="body_login">
 <?php
 include __DIR__.'/includes/head.php';
 ?>
+
+<div class="starsEl" id="stars"></div>
+
 
 <header class="header">
     <div class="logo">
@@ -12,40 +16,52 @@ include __DIR__.'/includes/head.php';
     </div>
 </header>
 
-<section class="Sec-Cadastro-tabela" style="margin-top:140px">
-<form class="Cadastro-tabela" action="insert-user.php" method="post">
-
-    <h1 class="Cadastro_titulo" >Cadastrar</h1>
-
-<div class="FORM-INPUT">
-
-    <div class="form-cad-login">
-    <label class="label-cad">Login:</label>
-    <input type="text" name="login_txt" maxLength="50">
+<div class="login-card">
+  <div class="login-content">
+ 
+    <div class="status">
+      <div class="status-dot"></div>
     </div>
+ 
+    <img class="logoimg" src="IMG/Checkpoint.png" alt="">
+    <h1>CADASTRAR-SE</h1>
+    <p class="subtitle">MELHOR-LOJA-DE-GAMES</p>
+ 
+    <div class="form-group">
+ <form class="Cadastro-tabela" action="insert-user.php" method="post">
+    
+      <div class="field">
+        <label>LOGIN</label>
+        <input type="text" placeholder="digite seu ID" name="login_txt" require>
+      </div>
+ 
+      <div class="field">
+        <label>SENHA:</label>
+        <input type="password" placeholder="••••••••" name="senha_txt"  require>
+      </div>
 
-    <div class="form-cad-senha">
-        <label class="label-cad">Senha:</label>
-        <input type="password" name="senha_txt"  maxLength="50">
+      <div class="field">
+        <label>NOME:</label>
+        <input type="text" placeholder="digite seu nome" name="nome_txt" require>
+      </div>
+
+      <div class="field">
+        <label>E-MAIL:</label>
+        <input type="email" placeholder="seu.email@dominio.com" name="email_txt"  require>
+      </div>
+ 
+      <button class="btn-connect" type="submit">-Cadastrar-</button>
+      </form>
     </div>
-
-    <div class="form-cad-nome">
-        <label class="label-cad">Nome:</label>
-        <input type="text" name="nome_txt" maxLength="50">
-    </div>
-
-    <div class="form-cad-email">
-        <label class="label-cad">E-mail:</label>
-        <input type="email" name="email_txt" maxLength="50">
-    </div>
-
+  </div>
 </div>
 
-   <button class="btn-login" type="submit" >Cadastrar</button>
-</form>
 </section>
-
-  
 <?php
 include __DIR__.'/includes/footer.php';
+?>
+
+
+<?php
+include __DIR__.'/includes/head.php';
 ?>

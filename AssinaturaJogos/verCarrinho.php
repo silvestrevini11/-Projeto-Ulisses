@@ -58,10 +58,10 @@ foreach ($jogos as $jogo) {
             </div>
 
             <div class="Aceitar">
-                <a href="index.php"><input type="button" class="car_btn" value="Comprar" style="background-color: green"></a>
+                <a href="comprar.php?id=<?= $jogo['id_jogo'] ?>"><input type="button" class="car_btn" value="Comprar" style="background-color: green"></a>
             </div>
             <div class="Rejeitar">
-                <a href="index.php"><input type="button" class="car_btn" value="Remover" style="background-color: red"></a>
+                <a href="remover.php?"><input type="button" class="car_btn" value="Remover" style="background-color: red"></a>
             </div>
 
         </div>

@@ -6,7 +6,7 @@ include __DIR__.'/database.php';
 <!-- CABEÇARIO --> 
     <header class="header">
     <div class="logo">
-      <img class="logo" src="IMG/Carrinho.png" alt="">
+      <!--<img class="logo" src="IMG/Checkpoint.png" alt="">-->
     </div>
 
         <div class="header-content">
