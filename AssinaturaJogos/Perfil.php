@@ -5,14 +5,17 @@ include __DIR__.'/verificar.php';
 ?>
 
 <?php
-$sql = $conn->query("SELECT * FROM usuario"); 
-$usuario = $sql->fetchAll();
+$idUser = $_SESSION['usuario']['id'];
+$sql = $conn->prepare("SELECT * FROM usuario WHERE id_user = :id");
+$sql->execute(['id' => $idUser]);
+$usuario = $sql->fetch();
 ?>
 
 <section class="All-perfil" style="margin-top:140px">
 
     <?php
 echo '<h1 class="titulo_perfil">'.'Seja Bem Vindo(a) '.$_SESSION['usuario']['nome'].'</h1>';
+echo '<h2>Saldo: R$ '.number_format($usuario['saldo'], 2, ',', '.').'</h2>';
     ?>
 
     </section>

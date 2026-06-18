@@ -1,13 +1,13 @@
 <?php
+session_start();
 include __DIR__.'/database.php';
-?>
-<?php
-$id = (int) $_GET['id'];
-$sql = $conn->prepare("SELECT * FROM carrinho WHERE id_user = :id");
-$sql->execute(['id' => $_SESSION['usuario']['id']]);
-$carrinho = $sql->fetchAll();
 
-$conn->prepare("DELETE FROM carrinho WHERE id_user = :id")->execute(['id' => $_SESSION['usuario']['id']]);
+$idJogo = (int)($_GET['id'] ?? 0);
+$idUser = $_SESSION['usuario']['id'];
+
+$sql = $conn->prepare("DELETE FROM carrinho WHERE id_user = :idUser AND id_jogo = :idJogo");
+
+$sql->execute(['idUser' => $idUser,'idJogo' => $idJogo]);
 
 header("Location: verCarrinho.php");
-?>
+exit;
