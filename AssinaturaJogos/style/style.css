@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Gamer';
     src: url('../fonte/Retro_Gaming.ttf') format('truetype');
@@ -6,133 +5,34 @@
     font-style: normal;
 }
 
-/*--INDEX--*/   
-h1{
-    color: #000000;
-    font-size: 3rem;
-    text-shadow: 0 0 px #ffffff00;
+/* ============================================
+   RESET
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-.Plataforma{
-    border: 1px solid rgb(0, 213, 255);
-    background-color: rgba(0, 159, 191, 0.737);
-    border-width: 3px;
-    transform: scale(1);
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    transition: all 0.5s;
-    text-shadow: 0 0 10px rgb(3, 156, 245);
-    width: 100px;
+/* ============================================
+   BODY / FUNDO
+   ============================================ */
+body {
+    background: linear-gradient(
+        to bottom,
+        #2a0040,
+        #12001a,
+        #0a1a2e
+    );
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
-.Plataforma:hover{
-    filter: brightness(1.1);
-    transform: scale(1.1);
-    transition: all 0.5s;
-    box-shadow: 0 0 40px rgba(0, 0, 255, 0.663);
-}
-
-.fotoC{
-    width: 400px;
-    height: 500px;
-    transform: scale(1);
-    transition: all 0.1s;
-    z-index: 3;
-    box-shadow: 0 0 10px black;
-}
-.Games{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    padding-top: 80px;
-}
-.capa{
-   display: inline-block;
-   border: 1px solid rgb(0, 213, 255);
-   border-width: 3px;
-   border-radius: 10px;
-   background-color: rgba(0, 159, 191, 0.737);
-}
-.cima-capa{
-    height: 10px;
-}
-/* NOME DOS JOGOS */
-.legenda{
-    text-align: center;
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
-    text-shadow: 0 0 10px rgb(140, 51, 148);
-    font-size: 20px;
-    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-}
-.legenda:hover{
-    transform: scale(1.50);
-    color: pink; 
-}
-/* PREÇO DOS JOGOS */
-.preço{
-    text-align: center;
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
-    text-shadow: 0 0 10px rgb(3, 156, 245);
-    width: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    font-size: 20px;
-    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-}
-.preço:hover {
-    color: rgb(255, 182, 193); /* Muda para rosa claro */
-    transform: scale(1.50);     
-    cursor: pointer;
-}
-    
-.titulo{
-    padding-left: 55px;
-    color: rgb(32, 0, 193);
-    transition: text-shadow 0.3 ease, transform 0.3 ease;
-    margin-top:25px;
-    font-size: 50px;
-}
-.a{
-    text-decoration: none;
-}
-.titulo:hover{
-    transform: scale(1.05);
-    text-shadow: 0 0 20px #0066ae;
-}
-.highlight{
-    text-shadow: 3px 3px 4px rgb(0, 0, 0);
-}
-.highlight:hover{
-    transform: text-shadow 0 0 50px orange;
-}
-.subtitulo{
-    color: rgb(255, 255, 255);
-    padding-left: 20px;
-}
-
-.fotoC:hover{
-    filter: brightness(1.1);
-    box-shadow: 0 0 40px rgba(0, 0, 255, 0.663);
-    cursor: pointer;
-}
-
-
-.fotoC:active{
-    filter: brightness(0.4);
-    transform: scale(0.9);
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
-    cursor: pointer;
-}
-
+/* ============================================
+   HEADER / NAVBAR
+   ============================================ */
 .header {
     position: fixed;
     top: 0;
@@ -147,607 +47,252 @@ h1{
     z-index: 1000;
 }
 
-body{
-    background: linear-gradient(
-        135deg,
-        #100f2a,
-        #1e293b,
-        #312e81
-    );
-    min-height: 100vh;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-.logo{
+.logo {
     width: 50px;
     height: 50px;
     padding-top: 18px;
     padding-left: 10px;
-
 }
 
-.btn{
+.logoimg {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.titulo {
+    padding-left: 55px;
+    color: rgb(253, 253, 253);
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+    margin-top: 25px;
+    font-size: 50px;
+    
+}
+
+.titulo:hover {
+    transform: scale(1.05);
+    text-shadow: 3.5px 3.5px 1px rgb(0, 0, 0);
+}
+
+.highlight {
+    font-family: Gamer;
+    color: #ff2d78;
+    text-shadow: 3px 3px 4px rgb(0, 0, 0);
+}
+
+.subtitulo {
+    color: rgb(255, 255, 255);
+    padding-left: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.butões-reg {
+    margin-left: auto;
+    margin-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+/* ============================================
+   BARRA DE PESQUISA
+   ============================================ */
+.input-wrapper {
+    display: flex;
+    flex: auto;
+    border: none;
+    padding: 1rem;
+    font-size: 2.80rem;
+    width: 10rem;
+    color: rgb(148, 143, 143);
+    box-shadow: 0 0.2rem #0f0f0f;
+    right: 90rem;
+    padding-left: 15%;
+    padding-top: 38px;
+    left: 10rem;
+    height: 50px;
+    margin-right: 200px;
+    border-radius: 10%;
+}
+
+.input {
+    height: 50px;
+}
+
+/* ============================================
+   BOTÕES GERAIS
+   ============================================ */
+.btn {
     height: 60px;
     width: 150px;
     margin: 2px;
-    font-size:50px;
-    border: rgb(0, 21, 255);
-    background-color: rgb(0, 200, 255);
+    color: #ffffff;
+    border: #12001a;
+    background-color: #2a0040a8;
     border-style: double;
     font-size: 22px;
     transition: all 0.1s;
     z-index: 3;
     text-decoration: none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif'
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 30px;
 }
-.btn-plat{
-    height:100%;
-    background-color: rgb(154, 174, 255);
-    max-width: 300px;
-    padding: 5px;
-}
-.btn:hover{
+
+.btn:hover {
     filter: brightness(1.1);
     transform: scale(1.1);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
     cursor: pointer;
 }
-.btn:active{
+
+.btn:active {
     filter: brightness(0.8);
     transform: scale(0.8);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
     cursor: pointer;
 }
-.highlight{
-    font-family: Gamer;
-    color: rgb(224, 153, 0);
+
+.btn-plat {
+    justify-content: center;
+    height: 100%;
+    background-color: #ff2d78;
+    max-width: 300px;
+    padding: 5px;
+    border-radius: 20px;
+    border-width: 10px;
+    border-color: rgb(93, 0, 15);
+    border-style: double;
 }
 
-
-/* --FIM---INDEX-- */
-
-/* Login */
-
-.Sec-Login-tabela{
+/* ============================================
+   INDEX - GRID DE JOGOS
+   ============================================ */
+.Games {
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* ============================================
+   INDEX - CARD DO JOGO
+   ============================================ */
+.capa {
+    width: 200px;
+    background: #0d0d1a;
+    border-radius: 12px;
+    border: 1px solid #222240;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.cima-capa {
+    display: none;
+}
+
+.capa a {
+    display: block;
+    line-height: 0;
+}
+
+.fotoC {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.fotoC:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 40px rgba(0, 0, 255, 0.663);
+    cursor: pointer;
+}
+
+.fotoC:active {
+    filter: brightness(0.4);
+    transform: scale(0.9);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.663);
+    cursor: pointer;
+}
+
+/* ============================================
+   INDEX - BADGE DE PLATAFORMA
+   ============================================ */
+.Plataforma {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+}
+
+.plat-pc          { background: #00ddff; color: #000000; border: none; }
+.plat-ps4         { background: #0070cc; color: #ffffff; border: none; }
+.plat-ps5         { background: #0080ee; color: #ffffff; border: none; }
+.plat-xbox        { background: #3a9e2e; color: #ffffff; border: none; }
+.plat-xboxone     { background: #00b506; color: #ffffff; border: none; }
+.plat-xboxseriess { background: #1d6e13; color: #ffffff; border: none; }
+
+/* ============================================
+   INDEX - NOME E PREÇO DO JOGO
+   ============================================ */
+.legenda {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    text-shadow: 0 0 10px rgb(140, 51, 148);
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.preço {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    text-shadow: 0 0 10px rgb(3, 156, 245);
     margin-left: auto;
     margin-right: auto;
-    font-size: 30px;
-    background: linear-gradient(135deg, rgb(0, 255, 238), rgb(255, 7, 7));
-    width: 410px;
-    height: 550px;
-    padding: 10px; 
-    border-radius: 20px;  
+    width: 100px;
+    font-size: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.btn-login {
-  margin: auto;
-  font-size: 18px;
-  background-color: #FF5C00;
-  color: #ffffff;
-  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border: 0;
-  z-index: 1;
-  user-select: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 4.5px;
-  padding: 0.8rem 1.5rem;
-  font-weight: 900;
-  min-width: 400px;
-  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+.preço:hover {
+    color: rgb(255, 182, 193);
+    transform: scale(1.50);
+    cursor: pointer;
 }
 
-.btn-login:before {
-  position: absolute;
-  pointer-events: none;
-  top: 0; left: 0;
-  display: block;
-  width: 100%; height: 100%;
-  content: "";
-  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-  z-index: -1;
-  background-color: #FF5C00 !important;
-  box-shadow: 0 -4px #6a040F inset,
-    -4px 0 rgba(250, 117, 1, 0.5) inset,
-    4px 0 rgba(255, 158, 2, 0.5) inset;
-}
-.btn-login:after {
-  position: absolute;
-  pointer-events: none;
-  top: 0; left: 0;
-  display: block;
-  width: 100%; height: 100%;
-  content: "";
-  box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-  transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-}
-.btn-login:hover:before {
-  box-shadow: 0 -4px rgb(0 0 0 / 50%) inset,
-    0 4px rgb(255 255 255 / 20%) inset,
-    -4px 0 rgb(255 255 255 / 20%) inset,
-    4px 0 rgb(0 0 0 / 50%) inset;
-}
-.btn-login:hover:after { box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%); }
-.btn-login:active { transform: translateY(4px); }
-.btn-login:active:after { box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%); }
-
-.form-log-login{
- margin-top: 5px;
-   
-}
-.form-log-senha{
-     font-family: Gamer;
-     font-size: 15px;
-     margin-top: 5px; 
-     margin-bottom: 50px;
-}
-.login_titulo{
-    font-family: Gamer;
-    color: white;
-    display: flex;
-    flex: auto;
-    margin-left: 125px;
-    text-shadow: 0 5px 5px #696a6a ;
-}
-
-.label-log{
-      color: white;  
- 
-} 
-.body_login{
+/* ============================================
+   LOGIN
+   ============================================ */
+.body_login {
     display: flex;
     justify-content: center;
     margin-top: 12%;
 }
 
-/*-- FIM -- LOGIN --*/
-/*-- Cadastro --*/
-
-.Cadastro_titulo{
-    color: black;
-    display: flex;
-    flex: auto;
-    margin-left: 80px;
-    text-shadow: 0 5px 5px rgb(94, 94, 94) ;        
-}
-
-.butões-reg{
-margin-left: auto;
-margin-right: 15px;
-margin-top: auto;
-margin-bottom: auto;
-}
-
-.Sec-Cadastro-tabela{
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 30px;
-    border-width: 5px;
-    background-color: black;
-    width: 455px;
-    height: 550px;
-    padding: 10px;
-    border-style: groove;
-    background-color: rgb(207, 207, 207);  
-    font-family: Gamer;
-}
-
-.label-cad{
-    color: black;
-}
-.cad-ult-button{
- font-size: 18px;
-  background-color: #008542;
-  color: #ffffff;
-  text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border: 0;
-  z-index: 1;
-  user-select: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 4.5px;
-  padding: 0.8rem 1.5rem;
-  font-weight: 900;
-  min-width: 400px;
-  transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
-}
-
-.form-cad-login{
- margin-top: 5px;   
-}
-.form-cad-senha{
-     margin-top: 5px; 
-}
-.form-cad-nome{
-    margin-top: 5px;  
-} 
-.form-cad-email{
-     margin-top: 5px; 
-     margin-bottom: 25px;
-}
-
-input{
-    width: 100%;
-    height: 20px;
-}
-
-.FORM-INPUT{
-    width: 100%;
-}
-/*--FIM--CADASTRO--*/
-
-
-/* From Uiverse.io by adamgiebl */ 
-.input-wrapper{
-  display: flex;
-  flex: auto;
-  border: none;
-  padding: 1rem;
-  font-size: 2.80rem;
-  width: 10rem;
-  color: rgb(148, 143, 143);
-  box-shadow: 0 0.2rem #0f0f0f;
-  right: 90rem;
-  padding-left: 15%;
-  padding-top: 38px;
-  left: 10rem;
-  height: 50px;
-  margin-right: 200px;
-  border-radius: 10%;
-}
-.input{
-    height: 50px
-}
-
-
-/*--Perfil--*/
-
-.titulo_perfil{
-    color: #ffffff;
-    font-size: 3rem;
-    text-shadow: 0 5px 5px #0095ff;
-    font-family: Gamer;
-}
-
-.All-perfil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-    color: #ffffff;
-}
-.perfil-options {
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    margin-top: 35px;
-    color: #ffffff;
-    margin-left: 40px;
-}
-
-.link{
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s; 
-}
-.link:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/*--JOGO--TELA--*/
-    .sidebar{
-        background-color: #1e293b;
-        width: 800px;
-        height: 1200px;
-        padding: 30px;
-        border: #0026ff44;
-        border-width: 6px;
-        border-style: ridge;
-        border-radius: 10px;
-        background: linear-gradient(to bottom right, rgb(0, 22, 68),rgb(0, 22, 68))
-    }
-    .header-telajogo{
-        height: 400px;
-    }
-    .jogo-container {
-        display: flex;
-        gap: 60px;
-        align-items: flex-start;
-        max-width: 100%;
-        margin: 140px auto 60px auto;
-        padding: 0 40px;
-    }
-
-    .jogo-capa {
-        flex-shrink: 0;
-    }
-
-    .jogo-img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        box-shadow: 0 0 30px rgba(0, 0, 255, 0.4);
-        border-radius: 6px;
-    }
-
-    .jogo-info {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        color: #e9e9e9;
-    }
-
-    .jogo-titulo {
-        font-size: 2.5rem;
-        color: #ffffff;
-        text-shadow: 0 0 20px rgba(100, 100, 255, 0.6);
-        margin: 0;
-    }
-
-    .jogo-meta {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .tag {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 4px 14px;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        color: #a0c4ff;
-    }
-
-    .jogo-criador,
-    .jogo-data {
-        font-size: 1rem;
-        color: #b0b0b0;
-        margin: 0;
-    }
-
-    .jogo-criador strong {
-        color: #e9e9e9;
-    }
-
-    .jogo-descricao {
-        font-size: 24px;
-        line-height: 1.7;
-        color: #cccccc;
-        margin: 0;
-        width: 1400px;
-    }
-
-    .jogo-compra {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-        margin-top: 10px;
-    }
-
-    .jogo-preco {
-        font-size: 4rem;
-        font-weight: bold;
-        transition: all 0.5s;
-        color: #64ff46;
-        text-shadow: 0 0 5px rgb(43, 255, 0);
-    }
-    .btn-comprar:hover{
-    filter: brightness(0.8);
-    transform: scale(1.1);
-    
-        box-shadow: 1px 1px 1px green;
-    }
-    .btn-comprar:active{
-        filter: brightness(0.4);
-        transform: scale(1);
-        box-shadow: 10px 10px 1px green;
-    }
-
-    .btn-comprar {
-        background-color: #26ff00;
-        min-width: 360px;
-        padding: 16px 40px;
-        font-size: 2rem;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border-radius: 100px;
-        box-shadow: 5px 5px 1px green;
-    }
-
-    .top-bottom{
-        display: flex;
-        flex-direction: column;
-        background: linear-gradient(to bottom right, rgb(0, 24, 75),rgb(0, 22, 68))
-    }
-
-    .videojogo{
-        width:  1480px;
-        height: 840px;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-        border-radius: 50px;
-    }
-   .container-video{
-    position: relative;
-    padding: 30px;
-    overflow: hidden;
-    background-color:rgb(0, 0, 0,0.2);
-    border: #0026ff44;
-    border-width: 6px;
-    border-style: ridge;
-    border-radius: 10px;
-    }
-
-    .Nota{
-        font-size: 100px;
-        font-family: 'Gamer';
-    }
-    .Nota-avaliação{
-        color: white;
-    }
-    .Nota-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-style: groove;
-        border-width: 10px;
-        border-radius: 10px;
-        width: 250px;
-        height: 250px;
-    }
-
-    @media (max-width: 768px) {
-        .jogo-container {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .jogo-info {
-            text-align: center;
-            align-items: center;
-        }
-    }
-/*--FIM--JOGO--TELA*/
-
-/*--PLATAFORMA/GENERO--*/
-
-.filtrar{
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: #a8a8a8;
-    border-style: ridge;
-    border-color: white;
-    border-radius: 20px;
-        margin-top: 50px;
-}
-.filtrar-box{
-    width: 300px;
-
-}
-.filtrar-text{
-    background-color: grey;
-    border-style: ridge;
-    border-radius: 10px;
-    width: 300px;
-    max-width: 300px;
-    padding: 5px;
-  text-decoration: none;
-  color: white;
-  font-size: 30px;
-  margin-bottom: -10px;
-  margin-left: 30px;
-  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
-}
-.filtrar-text:hover{
-    transform: scale(1.2);
-}
-.filtrar-box{
-    width: 10px;
-}
-.filtrar-title{
-    text-align: center;
-    text-shadow: 1px 1px 1px blue;
-}
-
-/* GAME CARRINHO */
-
-.Game_car{
-    background-color: #312e81;
-    padding: 25px;
-    border-color: #0066ae;
-    border-style: double;
-    border-width: 15px;
-}
-.Game_back{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.img_Game{
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    transition: all 0.2s;
-    background-color: #0095ff;
-    padding: 5px;
-
-}
-.img_Game:hover{
-    filter: brightness(1.1);
-    box-shadow: 0 0 40px rgba(0, 0, 255, 0.663);
-    cursor: pointer;
-}
-.Game_name{
-    background-color: #0095ff54;
-    padding: 5px;
-    max-height: 100%;
-    width: 100%;
-}
-.legenda_game{
-    font-size: 35px;
-    
-}
-.Game_preco{
-    background-color: #0095ff54;
-    padding: 5px;
-    height: 100%;
-    width: 100%;
-}
-.preço_game{
-    font-size: 35px;
-}
-
-.car_btn{
-    height: 200px;
-    width: 200px;
-    font-size: 35px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    cursor: pointer;
-    color: white;
-    transition: all 0.2;
-}
-.car_btn:hover{
-    filter: brightness(0.8);
-}
-.car_btn:active{
-    filter: brightness(0.6);
-    transform: scale(0.8);
-}
-.logoimg{
-
-    width:80px;
-    height:80px;
-    margin-bottom: 20px;
-    transition: all 0.2s;
-}
-
-/*GERADOR DE ESTRELA*/
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
-  }
-/*TELA-DE-LOGIN-BABE*/
-  .login-card {
+.login-card {
     background: #551355;
     border-radius: 17px;
     padding: 3rem 2rem;
@@ -758,30 +303,30 @@ input{
     overflow: hidden;
     width: 100%;
     max-width: 420px;
-  }
- 
-  .login-card::before {
+}
+
+.login-card::before {
     content: "";
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(29,158,117,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(29,158,117,0.06) 1px, transparent 1px);
+        linear-gradient(rgba(29,158,117,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,158,117,0.06) 1px, transparent 1px);
     background-size: 28px 28px;
     pointer-events: none;
-  }
- 
-  .login-card::after {
+}
+
+.login-card::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(circle at 15% 10%, rgba(216,90,48,0.12) 0%, transparent 35%),
-      radial-gradient(circle at 90% 85%, rgba(29,158,117,0.15) 0%, transparent 40%);
+        radial-gradient(circle at 15% 10%, rgba(216,90,48,0.12) 0%, transparent 35%),
+        radial-gradient(circle at 90% 85%, rgba(29,158,117,0.15) 0%, transparent 40%);
     pointer-events: none;
-  }
- 
-  .login-content {
+}
+
+.login-content {
     position: relative;
     z-index: 1;
     display: flex;
@@ -789,64 +334,54 @@ input{
     align-items: center;
     width: 100%;
     max-width: 340px;
-  }
- 
-  .status {
+}
+
+.status {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 6px;
-  }
- 
-  .status-dot {
+}
+
+.status-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: #1D9E75;
     box-shadow: 0 0 8px #406937;
-  }
- 
-  .status span {
+}
+
+.status span {
     font-size: 11px;
     color: #5DCAA5;
     letter-spacing: 2px;
     text-transform: uppercase;
-  }
- 
-  h1 {
-    color: #fff;
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    margin: 0 0 4px;
-    text-transform: uppercase;
-    text-shadow: 0 0 18px rgba(29,158,117,0.6);
-  }
- 
-  .subtitle {
+}
+
+.subtitle {
     color: #FFCE1B;
     font-size: 12px;
     margin: 0 0 2rem;
     letter-spacing: 1px;
-  }
- 
-  .form-group {
+}
+
+.form-group {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 14px;
-  }
- 
-  .field label {
+}
+
+.field label {
     font-size: 11px;
     color: #FFCE1B;
     letter-spacing: 1px;
     text-transform: uppercase;
     display: block;
     margin-bottom: 6px;
-  }
- 
-  .field input {
+}
+
+.field input {
     width: 100%;
     height: 44px;
     padding: 0 14px;
@@ -858,18 +393,16 @@ input{
     font-family: 'Courier New', monospace;
     outline: none;
     transition: box-shadow 0.2s, background 0.2s;
-  }
- 
-  .field input::placeholder {
-    color: #3a4a44;
-  }
- 
-  .field input:focus {
+}
+
+.field input::placeholder { color: #3a4a44; }
+
+.field input:focus {
     background: rgba(255,255,255,0.06);
     box-shadow: 0 0 12px rgba(29,158,117,0.4);
-  }
- 
-  .btn-connect {
+}
+
+.btn-connect {
     width: 100%;
     height: 50px;
     margin-top: 14px;
@@ -885,71 +418,52 @@ input{
     box-shadow: 0 0 22px rgba(29,158,117,0.5);
     clip-path: polygon(0 0, 100% 0, 100% 70%, 96% 100%, 0 100%);
     transition: box-shadow 0.2s;
-  }
- 
-  .btn-connect:hover {
-    box-shadow: 0 0 32px rgba(29,158,117,0.75);
-  }
- 
-  .btn-connect:active {
-    transform: scale(0.98);
-  }
- 
-  .row-links {
+}
+
+.btn-connect:hover { box-shadow: 0 0 32px rgba(29,158,117,0.75); }
+.btn-connect:active { transform: scale(0.98); }
+
+.row-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 7px;
-  }
- 
-  .row-links span {
+}
+
+.row-links span {
     font-size: 11px;
     letter-spacing: 0.5px;
     cursor: pointer;
-  }
- 
-  .link-recover {
-    color: #4b5563;
-  }
- 
-  .link-recover:hover {
-    color: #9ca3af;
-  }
- 
-  .link-register {
-    color: #D85A30;
-  }
- 
-  .link-register:hover {
-    text-decoration: underline;
-  }
- 
-  .divider {
+}
+
+.link-recover { color: #4b5563; }
+.link-recover:hover { color: #9ca3af; }
+.link-register { color: #D85A30; }
+.link-register:hover { text-decoration: underline; }
+
+.divider {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 18px 0 4px;
-  }
- 
-  .divider-line {
+}
+
+.divider-line {
     flex: 1;
     height: 1px;
     background: rgba(255,255,255,0.08);
-  }
- 
-  .divider span {
+}
+
+.divider span {
     font-size: 10px;
     color: #4b5563;
     letter-spacing: 1px;
     white-space: nowrap;
-  }
- 
-  .social-row {
-    display: flex;
-    gap: 10px;
-  }
- 
-  .btn-social {
+}
+
+.social-row { display: flex; gap: 10px; }
+
+.btn-social {
     flex: 1;
     height: 42px;
     background: transparent;
@@ -963,17 +477,437 @@ input{
     font-size: 12px;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
-  }
- 
-  .btn-social:hover {
-    border-color: #c4f309;
-    color: #fff;
-  }
- 
-  .btn-social i {
-    font-size: 16px;
-  }
-  
-.logoimg {
+}
+
+.btn-social:hover { border-color: #c4f309; color: #fff; }
+.btn-social i { font-size: 16px; }
+
+.form-log-login { margin-top: 5px; }
+.form-log-senha {
+    font-family: Gamer;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.login_titulo {
+    font-family: Gamer;
+    color: white;
+    display: flex;
+    flex: auto;
+    margin-left: 125px;
+    text-shadow: 0 5px 5px #696a6a;
+}
+
+.label-log { color: white; }
+
+.Sec-Login-tabela {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    background: linear-gradient(135deg, rgb(0, 255, 238), rgb(255, 7, 7));
+    width: 410px;
+    height: 550px;
+    padding: 10px;
     border-radius: 20px;
-}  
+}
+
+/* ============================================
+   CADASTRO
+   ============================================ */
+.Sec-Cadastro-tabela {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    border-width: 5px;
+    width: 455px;
+    height: 550px;
+    padding: 10px;
+    border-style: groove;
+    background-color: rgb(207, 207, 207);
+    font-family: Gamer;
+}
+
+.Cadastro_titulo {
+    color: black;
+    display: flex;
+    flex: auto;
+    margin-left: 80px;
+    text-shadow: 0 5px 5px rgb(94, 94, 94);
+}
+
+.label-cad { color: black; }
+
+.cad-ult-button {
+    font-size: 18px;
+    background-color: #008542;
+    color: #ffffff;
+    text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 0;
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 4.5px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 900;
+    min-width: 400px;
+    transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+}
+
+.form-cad-login  { margin-top: 5px; }
+.form-cad-senha  { margin-top: 5px; }
+.form-cad-nome   { margin-top: 5px; }
+.form-cad-email  { margin-top: 5px; margin-bottom: 25px; }
+
+input { width: 100%; height: 20px; }
+.FORM-INPUT { width: 100%; }
+
+/* ============================================
+   PERFIL
+   ============================================ */
+.titulo_perfil {
+    color: #ffffff;
+    font-size: 3rem;
+    text-shadow: 0 5px 5px #0095ff;
+    font-family: Gamer;
+}
+
+.All-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    color: #ffffff;
+}
+
+.perfil-options {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 35px;
+    color: #ffffff;
+    margin-left: 40px;
+}
+
+.link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ============================================
+   TELA DO JOGO
+   ============================================ */
+.sidebar {
+    background-color: #1e293b;
+    width: 800px;
+    height: 1200px;
+    padding: 30px;
+    border: #12001a;
+    border-width: 6px;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: #12001a; 
+}
+
+.header-telajogo { height: 400px; }
+
+.jogo-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 140px auto 60px auto;
+    padding: 0 40px;
+}
+
+.jogo-capa { flex-shrink: 0; }
+
+.jogo-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+}
+
+.jogo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #e9e9e9;
+}
+
+.jogo-titulo {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 0 0 20px #7209b7;
+    margin: 0;
+}
+
+.jogo-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #a0c4ff;
+}
+
+.jogo-criador,
+.jogo-data {
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin: 0;
+}
+
+.jogo-criador strong { color: #e9e9e9; }
+
+.jogo-descricao {
+    font-size: 24px;
+    line-height: 1.7;
+    color: #cccccc;
+    margin: 0;
+    width: 1400px;
+}
+
+.jogo-compra {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.jogo-preco {
+    font-size: 4rem;
+    font-weight: bold;
+    transition: all 0.5s;
+    color: #ffffff;
+    text-shadow: 0 0 5px rgb(252, 252, 252);
+}
+
+.btn-comprar {
+    background-color: #fafafa;
+    min-width: 360px;
+    padding: 16px 40px;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+    
+}
+
+.btn-comprar:hover {
+    filter: brightness(0.8);
+    transform: scale(1.1);
+    box-shadow: 1px 1px 1px #c77dff;
+}
+
+.btn-comprar:active {
+    filter: brightness(0.4);
+    transform: scale(1);
+    box-shadow: 10px 10px 1px #c77dff;
+}
+
+.top-bottom {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.videojogo {
+    width: 1480px;
+    height: 840px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    border-radius: 50px;
+}
+
+.container-video {
+    position: relative;
+    padding: 30px;
+    overflow: hidden;
+    background-color: #12001a;
+    border: #7109b736;
+    border-width: 6px;
+    border-style: ridge;
+    border-radius: 10px;
+}
+
+.Nota { font-size: 100px; font-family: 'Gamer'; }
+.Nota-avaliação { color: white; 
+
+}
+
+.Nota-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: groove;
+    border-width: 10px;
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+}
+
+@media (max-width: 768px) {
+    .jogo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .jogo-info {
+        text-align: center;
+        align-items: center;
+    }
+}
+
+/* ============================================
+   PLATAFORMA / GENERO (FILTROS)
+   ============================================ */
+.filtrar {
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: #12001a;
+    border-style: ridge;
+    border-color: white;
+    border-radius: 20px;
+    margin-top: 50px;
+    
+}
+
+.filtrar-box { width: 300px; }
+
+.filtrar-text {
+    background-color: #3a0ca3;
+    border-style: ridge;
+    border-radius: 10px;
+    width: 300px;
+    max-width: 300px;
+    padding: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    margin-bottom: -10px;
+    margin-left: 30px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.filtrar-text:hover { transform: scale(1.2); }
+
+.filtrar-title {
+    text-align: center;
+   
+}
+
+/* ============================================
+   CARRINHO
+   ============================================ */
+.Game_car {
+    background-color: #312e81;
+    padding: 25px;
+    border-color: #0066ae;
+    border-style: double;
+    border-width: 15px;
+}
+
+.Game_back {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.img_Game {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    transition: all 0.2s;
+    background-color: #0095ff;
+    padding: 5px;
+}
+
+.img_Game:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 40px rgba(0, 0, 255, 0.663);
+    cursor: pointer;
+}
+
+.Game_name {
+    background-color: #0095ff54;
+    padding: 5px;
+    max-height: 100%;
+    width: 100%;
+}
+
+.legenda_game { font-size: 35px; }
+
+.Game_preco {
+    background-color: #0095ff54;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.preço_game { font-size: 35px; }
+
+.saldo {
+    color: greenyellow;
+    margin-top: 35px;
+    margin-left: 70%;
+    font-size: 35px;
+    text-shadow: 5px 5px 1px green;
+}
+
+.car_btn {
+    height: 200px;
+    width: 200px;
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s;
+}
+
+.car_btn:hover { filter: brightness(0.8); }
+.car_btn:active { filter: brightness(0.6); transform: scale(0.8); }
+
+/* ============================================
+   DINHEIRO / INSERT
+   ============================================ */
+.din-card {
+    margin-left: 20px;
+    margin-top: 140px;
+    align-items: flex-start;
+    background-color: purple;
+    height: 750px;
+    font-size: 34px;
+    width: 750px;
+    border-radius: 20px;
+    border-style: double;
+    border-color: lime;
+}
+
+.din-tabela { padding: 20px; }
