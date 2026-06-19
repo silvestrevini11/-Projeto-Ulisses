@@ -1,8 +1,15 @@
-<section class="body_login">
-<?php
-include __DIR__.'/includes/head.php';
-?>
 
+<section class="body_login">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <title>CH3CKPOINT</title>
+</head>
+<body>
+  
 <div class="starsEl" id="stars"></div>
 
 
@@ -18,10 +25,7 @@ include __DIR__.'/includes/head.php';
 
 <div class="login-card">
   <div class="login-content">
- 
-    <div class="status">
-      <div class="status-dot"></div>
-    </div>
+
  
     <img class="logoimg" src="IMG/Checkpoint.png" alt="">
     <h1>LOGIN</h1>
@@ -46,7 +50,9 @@ include __DIR__.'/includes/head.php';
   </div>
 </div>
 
-</section>
+
+</body>
 <?php
 include __DIR__.'/includes/footer.php';
 ?>
+</section>

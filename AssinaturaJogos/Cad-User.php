@@ -19,9 +19,6 @@ include __DIR__.'/includes/head.php';
 <div class="login-card">
   <div class="login-content">
  
-    <div class="status">
-      <div class="status-dot"></div>
-    </div>
  
     <img class="logoimg" src="IMG/Checkpoint.png" alt="">
     <h1>CADASTRAR-SE</h1>

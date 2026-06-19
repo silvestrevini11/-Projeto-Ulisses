@@ -11,25 +11,13 @@ $plataformas = $sql->fetchAll();
     <h1 class = "filtrar-title">Filtrar Por Plataforma</h1>
 <a class="filtrar-box" href="indexPlataforma.php?id=<?= 1 ?>'] ?>"><p class="filtrar-text">PC</p></a><br>
 
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 2 ?>'] ?>"><p class="filtrar-text">PS1</p></a><br>
+<a class="filtrar-box" href="indexPlataforma.php?id=<?= 2 ?>'] ?>"><p class="filtrar-text">PS4</p></a><br>
 
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 3 ?>'] ?>"><p class="filtrar-text">PS2</p></p></a><br>
+<a class="filtrar-box" href="indexPlataforma.php?id=<?= 3 ?>'] ?>"><p class="filtrar-text">PS5</p></a><br>
 
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 4 ?>'] ?>"><p class="filtrar-text">PS3</p></a><br>
+<a class="filtrar-box" href="indexPlataforma.php?id=<?= 4 ?>'] ?>"><p class="filtrar-text">XBOX ONE</p></a><br>
 
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 5 ?>'] ?>"><p class="filtrar-text">PS4</p></a><br>
-
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 6 ?>'] ?>"><p class="filtrar-text">PS5</p></a><br>
-
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 7 ?>'] ?>"><p class="filtrar-text">XBOX</p></a><br>
-
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 8 ?>'] ?>"><p class="filtrar-text">XBOX 360</p></a><br>
-
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 9 ?>'] ?>"><p class="filtrar-text">XBOX ONE</p></a><br>
-
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 10 ?>'] ?>"><p class="filtrar-text">XBOX SERIES S</p></a><br>
-
-<a class="filtrar-box" href="indexPlataforma.php?id=<?= 11 ?>'] ?>"><p class="filtrar-text" style="margin-bottom: 20px">PSP</p></a>
+<a class="filtrar-box" href="indexPlataforma.php?id=<?= 5 ?>'] ?>"><p class="filtrar-text" style="margin-bottom: 20px">XBOX SERIES S</p></a><br>
 </section>
 
 <?php

@@ -10,7 +10,7 @@ $usuario = $sql->fetchAll();
 <!-- CABEÇARIO --> 
     <header class="header">
     <div class="logo">
-      <img class="logoimg" src="IMG/Checkpoint.png" alt="">
+      <img class="logoimg" src="IMG/Checkpoint.png">
     </div>
 
         <div class="header-content">
@@ -30,7 +30,7 @@ $usuario = $sql->fetchAll();
 </div>
     </header>
 <!-- CABEÇARIO --> 
-<section style="display: flex; justify-content:right">
+<section style="display: flex; justify-content:center">
 <div style="margin-top: 150px;" class="btn-plat">
 <a href="plataforma.php"><h1 class="btn">Plataformas</h1></a>
 <a href="genero.php"><h1 class="btn">Generos</h1></a>
@@ -63,8 +63,8 @@ foreach ($jogos as $jogo) { //voces sabem C# então não preciso explicar o "for
             <img class="fotoC" src="IMG/<?php echo $jogo['nome_jogo']; ?>.png"><!--pega a foto do nome do jogo de agora e adiciona ".PNG" TODAS AS FOTOS DEVEM SER .PNG AQUI A GENTE NÃO COAGULA COM JPG-->
         </a>
 
-        <p class="Plataforma">
-            <?php echo $jogo['plataforma']; ?><!--Pega a plataforma do jogo e exibe-->
+        <p class="Plataforma plat-<?php echo strtolower(str_replace([' ', '_'], '', $jogo['plataforma'])); ?>">
+         <?php echo $jogo['plataforma']; ?>
         </p>
 
         <p class="legenda">
