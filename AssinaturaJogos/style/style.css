@@ -827,9 +827,9 @@ input { width: 100%; height: 20px; }
    CARRINHO
    ============================================ */
 .Game_car {
-    background-color: #312e81;
+    background-color: #51008f;
     padding: 25px;
-    border-color: #0066ae;
+    border-color: #c77dff;
     border-style: double;
     border-width: 15px;
 }
@@ -845,7 +845,7 @@ input { width: 100%; height: 20px; }
     height: 250px;
     object-fit: cover;
     transition: all 0.2s;
-    background-color: #0095ff;
+    background-color: rgb(199, 125, 255);
     padding: 5px;
 }
 
@@ -856,19 +856,33 @@ input { width: 100%; height: 20px; }
 }
 
 .Game_name {
-    background-color: #0095ff54;
+    background-color: #51008f;
     padding: 5px;
     max-height: 100%;
     width: 100%;
 }
 
-.legenda_game { font-size: 35px; }
-
-.Game_preco {
-    background-color: #0095ff54;
+.legenda_game { 
+    background-color: #51008f;
     padding: 5px;
     height: 100%;
     width: 100%;
+    font-size: 35px; 
+    border-radius: 10px;
+    border-style: double;
+    border-width: 10px;
+    border-color: #c77dff;
+}
+
+.Game_preco {
+    background-color: #51008f;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    border-style: double;
+    border-width: 10px;
+    border-color: #c77dff;
 }
 
 .preço_game { font-size: 35px; }
@@ -901,13 +915,15 @@ input { width: 100%; height: 20px; }
     margin-left: 20px;
     margin-top: 140px;
     align-items: flex-start;
-    background-color: purple;
+    background-color: #6400b0;
     height: 750px;
     font-size: 34px;
     width: 750px;
+    color:#e76fff;
     border-radius: 20px;
     border-style: double;
-    border-color: lime;
+    border-width: 10px;
+    border-color: #310056;
 }
 
 .din-tabela { padding: 20px; }

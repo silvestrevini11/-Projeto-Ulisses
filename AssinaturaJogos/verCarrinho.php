@@ -46,11 +46,9 @@ foreach ($jogos as $jogo) {
                 </a>
             </div>
 
-            <div class="Game_name">
                 <p class="legenda_game">
                     <?php echo htmlspecialchars($nomeExibicao); ?>
                 </p>
-            </div>
 
             <div class="Game_preco">
                         <?php if($jogo['preco_jogo'] < 1){
