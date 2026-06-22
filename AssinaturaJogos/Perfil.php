@@ -17,6 +17,7 @@ $usuario = $sql->fetch();
 echo '<h1 class="titulo_perfil">'.'Seja Bem Vindo(a) '.$_SESSION['usuario']['nome'].'</h1>';
 echo '<h2>Saldo: R$ '.number_format($usuario['saldo'], 2, ',', '.').'</h2>';
     ?>
+    <img src="IMG/perfil_img.png" alt="">
 
     </section>
     <!-- CABEÇARIO --> 
@@ -30,11 +31,10 @@ echo '<h2>Saldo: R$ '.number_format($usuario['saldo'], 2, ',', '.').'</h2>';
         </div>
 <section class="perfil-options">
 <a  href="verCarrinho.php" class="link">Ver Carrinho</a>
-<a  href="logout.php" class="link">Sair</a>
-<a  href="form-update.php" class="link">Alterar</a>
 <a  href="Dinheiro-insert.php" class="link">Inserir Dinheiro</a>
+<a  href="verCarrinho.php" class="link">Ver Carrinho</a>
 <a  href="delete-user.php" class="link" onclick="return confirmarExclusao(event)">Excluir</a>
-
+<a  href="logout.php" class="link">Sair</a>
 
 
 
