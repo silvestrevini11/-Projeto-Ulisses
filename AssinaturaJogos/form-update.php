@@ -14,7 +14,7 @@ include __DIR__.'/select-update.php';
             </header>
 
 
-<section class="Sec-Cadastro-tabela" style="margin-top:140px">
+<section class="login-card" style="margin-top:140px">
 <form class="Cadastro-tabela" action="update-user.php" method="post">
 
     <h1 class="Cadastro_titulo">Alterar</h1>
